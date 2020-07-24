@@ -7,9 +7,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "layouts/header" %>
+    <div style="flex: 1">
+        
+        <main>いつもと違う、空が見たい</main>
+        
+    </div>
+     <%= render "layouts/footer" %>
   </body>
 </html>
