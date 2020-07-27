@@ -7,16 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  
+  <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+　<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
   </head>
 
   <body>
-    <%= render "layouts/header" %>
-    <div style="flex: 1">
-        
-        <main>いつもと違う、空が見たい</main>
-        
-    </div>
-     <%= render "layouts/footer" %>
+  	
+   <%= yield %>
   </body>
 </html>
