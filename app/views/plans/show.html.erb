@@ -1,0 +1,41 @@
+<div class="container main">
+  <div class="row">
+  	<div>
+  	<h3>作成plan</h3> 
+    </div>
+    <div>
+  	<table>
+  	<body>
+  	<tr> 
+       
+       	   <td>プランタイトル</td>
+       	   <td><%= @plan.title %></td> 
+    </tr> 
+    <tr> 
+       
+            <td>プランメモ</td>
+       	　  <td><%= @plan.introduction %></td>
+    </tr>
+    <tr> 
+       
+        	<td>場所名</td>
+        	<td><%= @plan.place_name %></td>
+    </tr>
+    <tr> 
+        
+        	<td>場所メモ</td>
+        	<td><%= @plan.place_introduction%></td>
+    </tr>
+    <tr> 
+        
+        	<td>想定予算</td>
+        	<td><%= @plan.price %>円</td>
+    </tr>
+    </body>
+    </table>
+    </div>
+    <div>
+    <%= link_to "Edit", edit_plan_path %> 
+    </div>
+    </div>
+</div>

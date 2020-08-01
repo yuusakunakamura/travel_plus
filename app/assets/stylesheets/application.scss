@@ -16,6 +16,29 @@
 
 @import "bootstrap";            /*ここを追加*/
 
-#map {
-  height: 300px;
+* {
 }
+
+body {
+	
+
+  background: linear-gradient(#05FBFF, #1D62F0 ) fixed;
+}
+#container{
+	height: 500px;
+}
+
+#theTarget {
+   width: 780px;
+   height: 400px;
+ }
+
+ .image1 {
+   background-image: url(image1.jpg);
+ }
+ .image2 {
+   background-image: url(image2.jpg);
+ }
+ .image3 {
+   background-image: url(image3.jpg);
+ }
