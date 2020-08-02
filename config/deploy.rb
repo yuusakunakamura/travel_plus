@@ -2,8 +2,7 @@
 lock "~> 3.14.1"
 
 set :application, "travel_plus" # my_app_name → アプリケーション名
-set :repo_url, "git@github.com:yuusakunakamura/travel_plus.git"　# git@example.com:me/my_repo.git → GitHubに登録しているアプリのアドレス
-
+set :repo_url, "git@github.com:yuusakunakamura/travel_plus.git"
 set :deploy_to, "/home/ec2-user/travel_plus"
 set :rbenv_ruby, '2.5.7'
 set :linked_files, %w{config/master.key .env}
