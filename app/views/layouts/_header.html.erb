@@ -8,7 +8,7 @@
   <li><%= link_to  "  Home", root_path, class: "home glyphicon glyphicon-home" %></li>
   <li><%= link_to  "  About", homes_path, class: "about glyphicon glyphicon-link" %></li>
   <li><%= link_to " logout", destroy_user_session_path, method: :delete, :class => "glyphicon glyphicon-log-out" %></li>
-   <li><%= link_to  "マイページ", users_show_path, class: "home glyphicon glyphicon-home" %></li>
+  
   <% else %>
   <li><%= link_to "  Sign Up", new_user_registration_path, class: "sign_up glyphicon glyphicon-edit" %></li>
    <li><%= link_to "  login", new_user_session_path, class: "sign_in glyphicon glyphicon-log-in" %></li>

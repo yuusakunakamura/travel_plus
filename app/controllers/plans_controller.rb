@@ -15,6 +15,7 @@ class PlansController < ApplicationController
 end
 def show
     @plan = Plan.find(params[:id])
+    @like = Like.new
   end
 
   def index

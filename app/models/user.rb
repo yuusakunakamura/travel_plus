@@ -4,8 +4,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :plans
-
+  has_many :plans,dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_plans, through: :likes, source: :plan
+ def already_liked?(plan)
+    self.likes.exists?(plan_id: plan.id)
+  end
+ 
   def active_for_authentication?
     super && (self.is_withdrawal == false)
   end
