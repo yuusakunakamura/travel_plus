@@ -13,8 +13,9 @@ class CreatePlans < ActiveRecord::Migration[5.2]
     t.string :picture
    
     t.integer :user_id
-
-
+    
+    t.time :time
+    t.date :date
       t.timestamps
     end
   end

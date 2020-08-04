@@ -6,11 +6,12 @@
     <div>
   	<table>
   	<body>
-    <tr> 
+      <tr> 
        
            <td>日にち</td>
-           
+           <td><%= @plan.date %></td> 
     </tr> 
+    
   	<tr> 
        
        	   <td>プランタイトル</td>
@@ -21,6 +22,11 @@
             <td>プランメモ</td>
        	　  <td><%= @plan.introduction %></td>
     </tr>
+    <tr> 
+       
+           <td>時間</td>
+           <td><%= @plan.time.strftime('%H:%M')  %></td> 
+    </tr> 
     <tr> 
        
         	<td>場所名</td>

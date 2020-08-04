@@ -16,6 +16,6 @@ class UsersController < ApplicationController
   end
   private
   def user_params
-    params.require(:user).permit(:is_withdrawal)
+    params.require(:user).permit(:email,:is_withdrawal)
   end
 end

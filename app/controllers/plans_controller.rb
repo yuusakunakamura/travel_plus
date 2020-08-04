@@ -40,7 +40,7 @@ def show
     
   private
   def plan_params
-  	params.require(:plan).permit(:title,:user_id,:picture,:image,:price,:introduction,:place_name,:place_introduction
+  	params.require(:plan).permit(:title,:time,:date,:user_id,:picture,:image,:price,:introduction,:place_name,:place_introduction
 )
   end
 end
