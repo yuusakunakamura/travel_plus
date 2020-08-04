@@ -10,6 +10,9 @@ class CreatePlans < ActiveRecord::Migration[5.2]
     t.string :place_name
     t.text :place_introduction
 
+    t.string :picture
+   
+    t.integer :user_id
 
 
       t.timestamps

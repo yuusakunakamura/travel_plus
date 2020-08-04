@@ -1,1 +1,14 @@
-  
+<div class="container main">
+  <div class="row">
+  	<h3>plan</h3>
+  	<table>
+     <% @plans.each do |plan| %>
+     <tr>
+        <td><%= link_to plan.title,plan_path(plan)  %></td>
+        
+     </tr>
+
+     <% end %>
+    </table>
+  </div>
+</div>  

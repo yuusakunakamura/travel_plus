@@ -67,3 +67,13 @@ gem 'jquery-rails'
 gem 'popper_js', '~> 1.9.9'
 
 gem 'devise'
+
+
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+
+gem 'carrierwave'
+gem 'mini_magick'
+
+
+gem "nested_form"

@@ -20,6 +20,10 @@
 <%= f.label :予算 %><br />
   <%= f.text_field :price, class: "new-plan", :style=>"width:150px;" %>
 </div>
+<div>
+<%= f.label :写真 %><br />
+  <%= f.attachment_field :image %>
+</div>
 
  <div class="col-xs-3 col-xs-offset-8">
           <%= f.submit "update", class: "btn btn-primary" %>

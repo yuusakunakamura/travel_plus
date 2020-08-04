@@ -16,6 +16,7 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
+//= require jquery_nested_form
 //= require_tree .
 
 $(document).ready(function () {

@@ -6,6 +6,11 @@
     <div>
   	<table>
   	<body>
+    <tr> 
+       
+           <td>日にち</td>
+           
+    </tr> 
   	<tr> 
        
        	   <td>プランタイトル</td>
@@ -30,6 +35,11 @@
         
         	<td>想定予算</td>
         	<td><%= @plan.price %>円</td>
+    </tr>
+    <tr> 
+        
+          <td>写真</td>
+           <td><%= attachment_image_tag @plan, :image, format: 'jpeg', class: "", size: "100x100" %></td>
     </tr>
     </body>
     </table>
