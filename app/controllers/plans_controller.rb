@@ -16,6 +16,8 @@ end
 def show
     @plan = Plan.find(params[:id])
     @like = Like.new
+    @comment = Comment.new
+    @comments = @plan.comments
   end
 
   def index
