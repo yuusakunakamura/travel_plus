@@ -1,3 +1,12 @@
+<main>
+  
+  　　
+        <
+        </table>
+        </div>
+    </div>
+  </div>  
+</main>
 
 <!DOCTYPE html>
 <html>
@@ -25,3 +34,33 @@
     </script>
   </body>
 </html>
+ <div>
+  <h3>いいね件数: <%= @plan.likes.count %></h3>
+<% if current_user.already_liked?(@plan) %>
+  <%= button_to 'いいねを取り消す', plan_like_path(@plan), method: :delete %>
+<% else %>
+  <%= button_to 'いいね', plan_likes_path(@plan) %>
+<% end %>
+</div>
+<div>
+  <% @plan.comments.each do |comment| %>
+  <div><%= comment.content %></div>
+  <div>
+    <%= link_to "destroy",plan_comment_path(comment.plan,comment),method: :delete  %>
+  </div>
+
+  <% end %>
+</div>
+<div>
+  
+  <h2>コメント一覧</h2>
+ <%= form_for [@plan, @comment] do |f| %>
+    
+            <%= f.text_area :content %>
+       
+    <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+<% end %>
+  
+
+
+</div>

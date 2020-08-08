@@ -1,51 +1,51 @@
-<div class="container main">
-	
-
-  <div class="row">
-  	
-
- <div>
- <%= form_for(@plan) do |f| %>
- <div class="form-group">
- <%= f.label :プランタイトル %><br />
-  <%= f.text_field :title, class: "new-plan", :style=>"width:150px;" %>
-</div>
-<div class="form-group">
-<%= f.label :メモ書き %><br />
-<%= f.text_area :introduction, class: "new-plan", :style=>"width:150px;" %>
- </div>
- <div>
-<%= f.label :予定日%><br />
-<%= f.date_select :date, prompt:true, ignore_data:true %>
-</div>
-<div>
-<%= f.label :時間%><br />
-<%= f.time_select :time, prompt:true, ignore_data:true %>
-</div>
-<div>
-<%= f.label :場所 %><br />
-  <%= f.text_field :place_name, class: "new-plan", :style=>"width:150px;" %>
-</div>
-<div>
-<%= f.label :場所メモ %><br />
-  <%= f.text_field :place_introduction, class: "new-plan", :style=>"width:150px;" %>
-</div>
-<div>
-<%= f.label :予算 %><br />
-  <%= f.text_field :price, class: "new-plan", :style=>"width:150px;" %>
-</div>
-<div>
-<%= f.label :写真 %><br />
-  <%= f.attachment_field :image %>
-</div>
-
- <div class="col-xs-3 col-xs-offset-8">
-          <%= f.submit "新規登録", class: "btn btn-primary" %>
-        </div>
-　
+<main>
+	<%= form_for(@plan) do |f| %>
+<div class="container" style="padding-left: 0px;padding-right: 0px;">
+  <br>
+  <h2 class="border-line">PLAN概要</h2>
+    <div id="main_box" class="form-summary">
+      <div id="summary_box">
+      	<div class="card">
+      		<div class="card-body">
+              <div class="form-group">
+              	 <%= f.text_field :title,placeholder:"プランタイトル" %>
+              </div>
+              <div class="form-group">
+                <%= f.text_area :introduction,placeholder:"内容(リンクなど)",:style=>"width:500px;" %>
+              </div>
+	        </div>
+      	</div>
+      </div>
+    </div>
+    <br>
+      <h2 class="border-line">スケジュール</h2>
+      <div id="schedule_box" class="form-summary" onedaybox-cnt="1">
+      	<div id="oneday_box" class="form-summary card">
+      		<div id="card_header">
+      			<div class="form-group">
+      			  <%= f.date_select :date, prompt:true, ignore_data:true %>
+      			</div>
+      			  <div id="card_box">
+      			  	<div id="card" class="card">
+      			  		<div class="card-body">
+      			  			<div><%= f.time_select :time, prompt:true, ignore_data:true %>
+      			  			<%= f.text_field :place_name,placeholder:"場所",:style=>"width:500px;" %>
+      			  			 <%= f.text_field :place_introduction,placeholder:"メモ書き",:style=>"width:500px;" %>
+      			  			 <%= f.text_field :price,placeholder:"予算",:style=>"width:500px;" %>
+      			  			 <%= f.attachment_field :image %>
+      			  			 <%= f.submit "新規登録", class: "btn btn-primary" %>
 
 <% end %>
 
+
+      			  		</div>
+      			  	</div>
+      			  </div>
+      		</div>
+        </div>
+      </div>
+
+
+ </div>
 </div>
-</div>
-</div>
+</main>

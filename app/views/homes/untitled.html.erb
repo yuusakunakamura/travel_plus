@@ -1,0 +1,68 @@
+
+  	
+    
+    <tr> 
+      <td>プランタイトル</td>
+      <td><%= @plan.title %></td> 
+    </tr> 
+    <tr> 
+      <td>プランメモ</td>
+      <td><%= @plan.introduction %></td>
+    </tr>
+    <section class="d-flex justify-content-center"> 
+      <div class="mx-auto row">
+        <div class="col-md-2"></div>
+        <div class="col-md-8 g-md-20">
+          <div class="main">
+            <div class="u-heading-v4-1 g-brd-promary g-md-10 g-mt-30">
+              <h2><%= @plan.title %></h2>
+              <h2><%= @plan.introduction %></h2>
+              <h2><%= @plan.date %></h2>
+            </div>
+
+            <ul class="timeline">
+              <li>
+                <%= @plan.time.strftime('%H:%M')  %>
+                <div class="icon">
+                  <i class="far fa-circle"></i>
+                </div>
+                <div class="label">
+                  <div><%= @plan.place_name %></div>
+                  <div><%= @plan.place_introduction%></div>
+                </div>
+              </li>
+
+      
+
+      </section>
+        
+
+
+
+    <tr>   
+      <td>日にち</td>
+      <td><%= @plan.date %></td> 
+      <td><%= @plan.time.strftime('%H:%M')  %></td> 
+      <td><i class="far fa-dot-circle"></i><%= @plan.place_name %></td>
+      <td>場所メモ</td>
+      <td><%= @plan.place_introduction%></td>
+    </tr>
+  </section>
+    <tr> 
+      <td>想定予算</td>
+      <td><%= @plan.price %>円</td>
+    </tr>
+    <tr> 
+      <td>写真</td>
+      <td><%= attachment_image_tag @plan, :image, format: 'jpeg', class: "", size: "100x100" %></td>
+    </tr>
+    </body>
+    </table>
+    </div>
+    <div>
+    <%= link_to "Edit", edit_plan_path %> 
+    </div>
+   
+    </div>
+    </div>
+</div>

@@ -1,100 +1,79 @@
-<div class="container main">
-  <div class="row">
-  	<div>
-  	<h3>作成plan</h3> 
+<h2 id="journey_summary" class="border-line">作成PLAN</h2>
+
+<div id="container" class="box">
+  <div id="joruney_summary_box">
+    <div class="simmary">
+      <div id="summary_title_0" style="padding-left: 10px; padding-top: 20px;font-size: 16px;font-weight:bold;"><%= @plan.title %></div>
+      <div id="summary_desc_0" style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; background-color:#b7b7b733; margin-left: 10px; margin-right: 10px; font-size:14px; "><%= @plan.introduction %></div>
+      
     </div>
-    <div>
-  	<table>
-  	<body>
-      <tr> 
-          <td>見てる人</td> 
-           <td><%= current_user.email %></td> 
-           
-           
-    </tr> 
-      <tr> 
-         
-           <td>投稿者</td> 
-           <td><%= @plan.user.email %></td> 
-    </tr> 
-    
-      <tr> 
-       
-           <td>日にち</td>
-           <td><%= @plan.date %></td> 
-    </tr> 
-    
-  	<tr> 
-       
-       	   <td>プランタイトル</td>
-       	   <td><%= @plan.title %></td> 
-    </tr> 
-    <tr> 
-       
-            <td>プランメモ</td>
-       	　  <td><%= @plan.introduction %></td>
-    </tr>
-    <tr> 
-       
-           <td>時間</td>
-           <td><%= @plan.time.strftime('%H:%M')  %></td> 
-    </tr> 
-    <tr> 
-       
-        	<td>場所名</td>
-        	<td><%= @plan.place_name %></td>
-    </tr>
-    <tr> 
-         
-        	<td>場所メモ</td>
-        	<td><%= @plan.place_introduction%></td>
-    </tr>
-    <tr> 
-        
-        	<td>想定予算</td>
-        	<td><%= @plan.price %>円</td>
-    </tr>
-    <tr> 
-        
-          <td>写真</td>
-           <td><%= attachment_image_tag @plan, :image, format: 'jpeg', class: "", size: "100x100" %></td>
-    </tr>
-    </body>
-    </table>
-    </div>
-    <div>
-    <%= link_to "Edit", edit_plan_path %> 
-    </div>
-    <div>
-  <h3>いいね件数: <%= @plan.likes.count %></h3>
-<% if current_user.already_liked?(@plan) %>
-  <%= button_to 'いいねを取り消す', plan_like_path(@plan), method: :delete %>
-<% else %>
-  <%= button_to 'いいね', plan_likes_path(@plan) %>
-<% end %>
+  </div>
+  <br>
 </div>
-<div>
-  <% @plan.comments.each do |comment| %>
-  <div><%= comment.content %></div>
-  <div>
+
+<h2 id="journey_summary" class="border-line">スケジュール</h2>
+<div id="container" class="box" style="height: auto !important;">
+<div id="schedule_box">
+  <br>
+<div class="container">
+  <div class="row one-day">
+    <div class="col-auto mr-auto">
+      <%= @plan.date %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-1">
+      <div class="row h-50">
+        <div class="col-1"></div>
+      </div>
+      <h5 class>
+        <i class="far fa-circle"></i>
+      </h5>
+      <div class="row h-50">
+        <div class="col-1 scard-line"></div>
+      </div>
+    </div>
+    <div class="col scard">
+       <i class="far fa-circle"></i>
+       <div class="time and place">
+        <%= @plan.time.strftime('%H:%M')  %>
+          <i class="fas fa-map-marker-alt"></i>
+            <%= @plan.place_name %>
+          <div class="memo">
+            <%= @plan.place_introduction%>
+          </div>
+       </div>
+    </div>
+  </div>
+</div>
+</div>
+<br>
+</div>
+<h2 id="journey_summary" class="border-line">コメント</h2>
+
+<div id="comment"class="box">
+  <div id="comment_box" class="comment_box">
+     <% @plan.comments.each do |comment| %>
+  <div><%= comment.content %>
     <%= link_to "destroy",plan_comment_path(comment.plan,comment),method: :delete  %>
   </div>
-
   <% end %>
-</div>
-<div>
-  
-  <h2>コメント一覧</h2>
- <%= form_for [@plan, @comment] do |f| %>
+  <br>
+  </div>
+  <div id="form" class="box">
+    <div id="form_box" class="form_box">
+
+<%= form_for [@plan, @comment] do |f| %>
     
-            <%= f.text_area :content %>
+            <div class="form text"><%= f.text_area :content %></div>
        
-    <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+    <div class="sousin"> <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %></div>
 <% end %>
-  
-
 
 </div>
-    </div>
-    </div>
+</div>
+</div>
 </div>
