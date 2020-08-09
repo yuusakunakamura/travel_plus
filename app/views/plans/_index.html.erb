@@ -1,0 +1,16 @@
+<br>
+<h2 id="journey_summary" class="border-line">PLAN一覧</h2>
+
+<div id="container" class="box">
+  <div class="index">
+ 
+     <% plans.each do |plan| %>
+     <tr>
+        <td><%= link_to plan.title,plan_path(plan)  %></td>
+        <td><%= link_to "PLAN削除", plan_path(plan.id), method: :delete, "data-confirm" => "プランを消しますか?" %></td>
+     </tr>
+
+     <% end %>
+   </div>
+  </div>
+</div>

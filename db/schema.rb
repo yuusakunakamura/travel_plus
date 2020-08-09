@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_04_183441) do
+ActiveRecord::Schema.define(version: 2020_08_08_202807) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -39,6 +39,15 @@ ActiveRecord::Schema.define(version: 2020_08_04_183441) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "plan_tags", force: :cascade do |t|
+    t.integer "plan_id"
+    t.integer "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["plan_id"], name: "index_plan_tags_on_plan_id"
+    t.index ["tag_id"], name: "index_plan_tags_on_tag_id"
+  end
+
   create_table "plans", force: :cascade do |t|
     t.string "image_id"
     t.integer "price"
@@ -54,10 +63,17 @@ ActiveRecord::Schema.define(version: 2020_08_04_183441) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tags", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.string "image_id"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

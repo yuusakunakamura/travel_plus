@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :plans,dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_plans, through: :likes, source: :plan
-
+  attachment :image
   has_many :comments
  def already_liked?(plan)
     self.likes.exists?(plan_id: plan.id)

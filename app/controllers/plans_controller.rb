@@ -22,6 +22,7 @@ def show
 
   def index
   @plans = Plan.all
+
   end
 
   

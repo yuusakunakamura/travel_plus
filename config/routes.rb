@@ -15,4 +15,5 @@ end
 get 'homes' => 'homes#about'
 get "users/withdrawal" => "users#withdrawal"
 put "users/hide" => "users#hide", as: 'users_hide'
+get '/search', to: 'search#search'
 end

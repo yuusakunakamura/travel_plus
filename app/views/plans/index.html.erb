@@ -1,14 +1,2 @@
-<div class="container main">
-  <div class="row">
-  	<h3>plan</h3>
-  	<table>
-     <% @plans.each do |plan| %>
-     <tr>
-        <td><%= link_to plan.title,plan_path(plan)  %></td>
-        <td><%= link_to "バイバイ", plan_path(plan.id), method: :delete, "data-confirm" => "プランを消しますか?" %></td>
-     </tr>
+ <%= render 'plans/index', plans: @plans %>
 
-     <% end %>
-    </table>
-  </div>
-</div>

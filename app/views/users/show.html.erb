@@ -1,10 +1,23 @@
-show
 
-<li><%= link_to "plan作成", new_plan_path, class: "sign_in glyphicon glyphicon-log-in" %></li>
+<div class="main">
+  <br>
+  <div class="container">
+  <div class="row">
+    <div class="myroom">
+       <h2> <%= @user.name%>さんの部屋</h2>
+      <div class="col-xs-4">
+        <img class="profire"><%= attachment_image_tag @user, :image, format: 'jpeg', fallback: "image1.jpg", size: "300x300" %></img>
+      </div>
+      <div class="myroom_btn">
+      <%= link_to 'プロフィール変更', edit_user_path, :style => "color:red;" %>
+      </div>
 
-<li><%= link_to "plan一覧", plans_path, class: "sign_in glyphicon glyphicon-log-in" %></li>
-
-
-
-
-  <%= link_to "退会する", users_withdrawal_path %>
+      <div class="col-xs-8">
+        <%= link_to "plan作成", new_plan_path, class: "sign_in glyphicon glyphicon-log-in" %></li>
+        <%= link_to "plan一覧", plans_path, class: "sign_in glyphicon glyphicon-log-in" %></
+      </div>
+      <%= link_to "退会する", users_withdrawal_path %>
+      </div>
+    </div>
+  </div>
+</div>

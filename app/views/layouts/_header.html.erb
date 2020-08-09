@@ -1,4 +1,4 @@
- 
+  
   
   <div class = "top" >
      <div class="d-flex justify-content-center"> 
@@ -8,9 +8,20 @@
   <div class = "under" >
    <div class="d-flex justify-content-center">     
      <% if user_signed_in? %>
+
    <div><%= link_to  "  Home", root_path, class: "home glyphicon glyphicon-home" %></div>
    <div><%= link_to  "  About", homes_path, class: "about glyphicon glyphicon-link" %></div>
    <div><%= link_to " logout", destroy_user_session_path, method: :delete, :class => "glyphicon glyphicon-log-out" %></div>
+   <div><%= link_to  "マイページ", user_path(current_user), class: "home glyphicon glyphicon-home" %></div>
+
+   <div class="search-form">
+        <%= form_tag(search_path, method: :get) do %>
+          <%= text_field_tag 'search[content]' %>
+          <%= select_tag 'search[model]', options_for_select({ "都道府県" => "plan" }) %>
+          <%= select_tag 'search[method]', options_for_select({ "完全一致" => "perfect", "前方一致" => "forward", "後方一致" => "backward", "部分一致" => "partial" }) %>
+          <%= submit_tag 'search' %>
+        <% end %>
+      </div>
   
   <% else %>
   <div><%= link_to "  Sign Up", new_user_registration_path, class: "sign_up glyphicon glyphicon-edit" %></div>
