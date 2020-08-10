@@ -3,15 +3,12 @@ class CommentsController < ApplicationController
     plan = Plan.find(params[:plan_id])
 	  comment = current_user.comments.new(comment_params)
     comment.plan_id = plan.id
-      if comment.save
-      redirect_to root_path
-    else
-      redirect_to root_path
-    end
+     comment.save
+      
 	end
   def destroy
     Comment.find_by(id: params[:id], plan_id: params[:plan_id]).destroy
-    redirect_to root_path
+    
     end  
   
   private
@@ -19,3 +16,4 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:content)
   end
 end
+

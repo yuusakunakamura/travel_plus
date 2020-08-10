@@ -16,63 +16,16 @@
   <br>
 </div>
 <br>
-<h2 id="journey_summary" class="border-line">スケジュール</h2>
-<div id="container" class="box" style="height: auto !important;">
-<div id="schedule_box">
-  <br>
-<div class="container">
-  <div class="row one-day">
-    <div class="col-auto mr-auto">
-      <%= @plan.date %>
-    </div>
-  </div>
-</div>
-
-<div class="container">
-  <div class="row">
-    <div class="col-1">
-      <div class="row h-50">
-        <div class="col-1"></div>
-      </div>
-      <h5 class>
-        <i class="far fa-circle"></i>
-      </h5>
-      <div class="row h-50">
-        <div class="col-1 scard-line"></div>
-      </div>
-    </div>
-    <div class="col scard">
-       <i class="far fa-clock"></i>
-       <div class="time and place">
-        <%= @plan.time.strftime('%H:%M')  %>
-          <i class="fas fa-map-marker-alt"></i>
-            <%= @plan.place_name %>
-          <div class="memo">
-            <%= @plan.place_introduction%>
-          </div>
-          <div class="place_image">
-            <img class="plan_image"><%= attachment_image_tag @plan, :image, format: 'jpeg', fallback: "image1.jpg", size: "100x100" %></img>
-          </div>
-       </div>
-    </div>
-  </div>
-</div>
-</div>
-<br>
-</div>
-<br>
 
 <h2 id="journey_summary" class="border-line">いいね</h2>
   <div id="iine"class="box">
     <div id="iine_box" class="iine_box">
-     <h3>いいね件数: <%= @plan.likes.count %></h3>
-     <% if current_user.already_liked?(@plan) %>
-    <%= button_to 'いいねを取り消す', plan_like_path(@plan), method: :delete %>
-     <% else %>
-     <%= button_to 'いいね', plan_likes_path(@plan) %>
-    <% end %>
+     <div id="likes_buttons_<%= @plan.id %>">
+    <%= render 'likes/like', plan: @plan %>
+    </div>
     <div>
   </div>
+
  
  
  

@@ -19,21 +19,7 @@
       </div>
     </div>
     <br>
-      <h2 class="border-line">スケジュール</h2>
-      <div id="schedule_box" class="form-summary" onedaybox-cnt="1">
-        <div id="oneday_box" class="form-summary card">
-          <div id="card_header">
-            <div class="form-group">
-              <%= f.date_select :date, prompt:true, ignore_data:true %>
-            </div>
-              <div id="card_box">
-                <div id="card" class="card">
-                  <div class="card-body">
-                    <div><%= f.time_select :time, prompt:true, ignore_data:true %>
-                    <%= f.text_field :place_name,placeholder:"場所",:style=>"width:500px;" %>
-                     <%= f.text_field :place_introduction,placeholder:"メモ書き",:style=>"width:500px;" %>
-                     <%= f.text_field :price,placeholder:"予算",:style=>"width:500px;" %>
-                     <%= f.attachment_field :image %>
+    
                      <%= f.submit "更新", class: "btn btn-primary" %>
 
 <% end %>

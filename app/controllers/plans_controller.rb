@@ -1,6 +1,6 @@
 class PlansController < ApplicationController
   def new
-  @plan = Plan.new
+  @plan = Plan.new 
   end
 
   def create
@@ -35,7 +35,7 @@ def show
   	@plan = Plan.find(params[:id])
   	@plan.update(plan_params)
   	redirect_to plan_path(@plan)
-  end
+  end 
   def destroy
     plan = Plan.find(params[:id]) #データ(レコード)を1件取得
           plan.destroy #データ（レコード）を削除
@@ -44,7 +44,6 @@ def show
     
   private
   def plan_params
-  	params.require(:plan).permit(:title,:time,:date,:user_id,:picture,:image,:price,:introduction,:place_name,:place_introduction
-)
+  	params.require(:plan).permit(:title,:user_id,:picture,:introduction)
   end
 end

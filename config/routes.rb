@@ -1,14 +1,18 @@
 Rails.application.routes.draw do
-  
+  devise_for :users
   root :to =>'homes#top'
   
-  devise_for :users
+  
   resources :users
   resources :markers
   resources :plans do
   resources :comments, only: [:create,:destroy]
-  resources :likes, only: [:create, :destroy]
+  resource :likes, only: [:create, :destroy]
 end
+  resources :plan_dates
+  
+
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
 

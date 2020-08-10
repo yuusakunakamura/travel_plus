@@ -1,16 +1,15 @@
 class LikesController < ApplicationController
-
-	def create
+  
+ def create
+ 	  @plan = Plan.find(params[:plan_id])
 	  @like = current_user.likes.create(plan_id: params[:plan_id])
-      redirect_to plans_path(@plan)
-
+      
 	end
 
 	def destroy
+	  @plan = Plan.find(params[:plan_id])
       @like = Like.find_by(plan_id: params[:plan_id], user_id: current_user.id)
       @like.destroy
-      redirect_to plans_path(@plan)
+      
     end
-   
-    
 end

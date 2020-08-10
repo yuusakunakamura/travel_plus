@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_08_202807) do
+ActiveRecord::Schema.define(version: 2020_08_09_073509) do
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -23,18 +23,29 @@ ActiveRecord::Schema.define(version: 2020_08_08_202807) do
   end
 
   create_table "likes", force: :cascade do |t|
-    t.integer "plan_id"
     t.integer "user_id"
+    t.integer "plan_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["plan_id"], name: "index_likes_on_plan_id"
-    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "markers", force: :cascade do |t|
     t.string "title"
     t.float "lat"
     t.float "lng"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "plan_dates", force: :cascade do |t|
+    t.string "image_id"
+    t.integer "price"
+    t.string "place_name"
+    t.text "place_introduction"
+    t.string "picture"
+    t.integer "plan_id"
+    t.time "time"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -49,16 +60,10 @@ ActiveRecord::Schema.define(version: 2020_08_08_202807) do
   end
 
   create_table "plans", force: :cascade do |t|
-    t.string "image_id"
-    t.integer "price"
     t.string "title"
     t.text "introduction"
-    t.string "place_name"
-    t.text "place_introduction"
     t.string "picture"
     t.integer "user_id"
-    t.time "time"
-    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
