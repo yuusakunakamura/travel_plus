@@ -5,7 +5,7 @@
   <div class="container">
     <div class="row">
           <div class="col-xs-4">
-              <img class="profire"><%= attachment_image_tag @user, :image, format: 'jpeg', fallback: "image1.jpg", size: "300x300" %></img>
+              <img class="profire"><%= attachment_image_tag @user, :image, format: 'jpeg', fallback: "no-image.jpg", size: "300x300" %></img>
               <div class="henkou"><%= link_to 'プロフィール変更', edit_user_path, class: "col-xs-12 btn btn-success"  %></div>
               <div class="sakusei"><%= link_to "plan作成", new_plan_path, class: "sign_in glyphicon glyphicon-log-in" %>
               <%= link_to "plan一覧", plans_path, class: "sign_in glyphicon glyphicon-log-in" %>

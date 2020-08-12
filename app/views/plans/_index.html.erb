@@ -16,7 +16,7 @@
         <tbody>
           <% plans.each do |plan| %>
           <tr>
-            <td><img class="profire"><%= attachment_image_tag plan.user, :image, format: 'jpeg', fallback: "image1.jpg", size: "35x35" %></img>
+            <td><img class="profire"><%= attachment_image_tag plan.user, :image, format: 'jpeg', fallback: "no-image.jpg", size: "35x35" %></img>
             </td>
             <td><%= plan.user.name %></td>
             <td><%= plan.word %></td>

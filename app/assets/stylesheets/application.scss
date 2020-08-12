@@ -258,15 +258,15 @@ border-right: 3px solid #dee2e6!important;
  }
 
  .image1 {
-   background-image: url(image1.jpg);
+   background-image: image-url("image1.jpg");
    width: 100%;
  }
  .image2 {
-   background-image: url(image2.jpg);
+   background-image: image-url("image2.jpg");
    width: 100%;
  }
  .image3 {
-   background-image: url(image3.jpg);
+   background-image: image-url("image3.jpg");
    width: 100%;  
  }
 //新規登録 ログイン画面
