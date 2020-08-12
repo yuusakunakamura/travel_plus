@@ -70,3 +70,20 @@ group :production do
   gem 'mysql2'
 end
 
+# bootstrap 4
+gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'tether-rails', '~> 1.4'
+gem 'jquery-rails'
+gem 'popper_js', '~> 1.9.9'
+
+gem 'devise'
+
+
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+
+gem 'carrierwave'
+gem 'mini_magick'
+
+
+gem "nested_form_fields"

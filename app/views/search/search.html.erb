@@ -1,0 +1,11 @@
+<br>
+<div class="container main">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+     <% if @model == 'plan' %>
+        <h3>plan検索結果 '<%= @content %>'</h3>
+          <%= render 'plans/index', plans: @records %>
+      <% end %>
+    </div>
+  </div>
+</div>

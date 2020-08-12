@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
-  root :to => 'homes#index'
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+   devise_for :users, controllers: {
+    
+    :sessions => 'users/sessions'
+  }
+
+  root :to =>'homes#top'
+  resources :users
+  resources :plans do
+  resources :comments, only: [:create,:destroy]
+  resource :likes, only: [:create, :destroy]
+end
+  
+get 'homes' => 'homes#about'
+put '/users/:id/hide' => 'users#hide', as: 'users_hide'
+get '/search', to: 'search#search'
 end

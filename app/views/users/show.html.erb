@@ -1,0 +1,40 @@
+<br>
+<br>
+ <h2 class="room"> <%= @user.name%>さんの部屋</h2>
+  <br>
+  <div class="container">
+    <div class="row">
+          <div class="col-xs-4">
+              <img class="profire"><%= attachment_image_tag @user, :image, format: 'jpeg', fallback: "image1.jpg", size: "300x300" %></img>
+              <div class="henkou"><%= link_to 'プロフィール変更', edit_user_path, class: "col-xs-12 btn btn-success"  %></div>
+              <div class="sakusei"><%= link_to "plan作成", new_plan_path, class: "sign_in glyphicon glyphicon-log-in" %>
+              <%= link_to "plan一覧", plans_path, class: "sign_in glyphicon glyphicon-log-in" %>
+              </div>
+          </div>
+          <div class="col-xs-8">
+           <h2 class="myplan">myプラン一覧</h2>
+             <table class="table table-hover ">
+               <thead>
+                 <tr>
+                   <th>検索ワード</th>
+                   <th>プランタイトル</th>
+                   <th colspan="3"></th>
+                </tr>
+               </thead>
+               <% @plans.each do |plan| %>
+              <tr>
+                <td><%= link_to plan.word,plan_path(plan)  %></td>
+                <td><%= plan.title  %></td>
+                  <% if user_signed_in? %>
+                <td><%= link_to "削除", plan_path(plan.id), method: :delete, "data-confirm" => "プランを消しますか?" %>
+                </td>
+                  <% end %>
+               <% end %> 
+              </tr>
+            </table>
+          </div>
+        </div>
+      </div>
+  
+
+    
