@@ -1,24 +1,20 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# <アプリ名>
+travel_plus
+## サイト概要
+旅行に行く時の計画を立てられるサイト、また旅の思い出を追加で載せられて、かつ他人に公開できるサイト
+### サイトテーマ
+旅行に行く際の計画を立てられ、思い出も残せるサイト
+### テーマを選んだ理由
+他人の旅行プランや旅の思い出を参考にできるサイトを作りたかった。
+### ターゲットユーザ
+基本的には、旅行を楽しむ全ユーザーを対象としていますが、サイトデザインに関しては若い女性が使用するに抵抗のない物を考えています。
+### 主な利用シーン
+旅行を楽しみたいがどうすればいいのかわからない人、わかりやすく旅の計画を共有したい人、旅の思い出を残したい人が使用する。
+## 設計書
 
-Things you may want to cover:
+### 機能一覧
+https://docs.google.com/spreadsheets/d/1sWSVPH2DFFBUk_JziyuRcba2SE3UVDJp-AMXuXB_ExY/edit#gid=0
 
-* Ruby version
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
