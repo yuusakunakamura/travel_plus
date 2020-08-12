@@ -63,6 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # bootstrap 4
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'tether-rails', '~> 1.4'
 gem 'jquery-rails'
 gem 'popper_js', '~> 1.9.9'
 
@@ -76,4 +77,4 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 
-gem "nested_form"
+gem "nested_form_fields"

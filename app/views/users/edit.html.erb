@@ -4,7 +4,12 @@
           <%= form_for(@user) do |f| %>
                  <div><%= f.label :お名前 %><br />
                  <%= f.text_field :name, autofocus: true,placeholder:""%></div>
-                <div><%= f.attachment_field :image %></div>
+                <div class="myroom_image"><%= f.attachment_field :image %></div>
                  <div><%= f.submit "登録内容を保存する" %></div>
           <% end %>
 </div>
+ <% if user_signed_in? && @user == current_user %>
+        <%= link_to "退会", users_hide_path(current_user), method: :put, "data-confirm" => "        本当に退会しますか？
+        まだ作成planが残っていればキャンセルを押して削除してから退会して
+        下さい。", class: "btn btn-outline-danger" %>
+<% end %>

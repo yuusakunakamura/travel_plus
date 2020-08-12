@@ -10,7 +10,7 @@ class SearchController < ApplicationController
   def search_for(model, content, method)
     if model == 'plan'
       if method == 'perfect'
-        Plan.where(title: content)
+        Plan.where(word: content)
       elsif method == 'forward'
         Plan.where('title LIKE ?', content+'%')
       elsif method == 'backward'

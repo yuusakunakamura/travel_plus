@@ -1,16 +1,32 @@
 <br>
 <h2 id="journey_summary" class="border-line">PLAN一覧</h2>
-
-<div id="container" class="box">
-  <div class="index">
- 
-     <% plans.each do |plan| %>
-     <tr>
-        <td><%= link_to plan.title,plan_path(plan)  %></td>
-        <td><%= link_to "PLAN削除", plan_path(plan.id), method: :delete, "data-confirm" => "プランを消しますか?" %></td>
-     </tr>
-
-     <% end %>
-   </div>
+  <div id="container" class="box">
+    <div class="index">
+    <br>
+      <table class="table table-hover ">
+        <thead>
+          <tr>
+            <th></th>
+            <th>お名前</th>
+            <th>検索ワード</th>
+            <th>プランタイトル</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% plans.each do |plan| %>
+          <tr>
+            <td><img class="profire"><%= attachment_image_tag plan.user, :image, format: 'jpeg', fallback: "image1.jpg", size: "35x35" %></img>
+            </td>
+            <td><%= plan.user.name %></td>
+            <td><%= plan.word %></td>
+            <td><%= link_to plan.title,plan_path(plan)  %></td>
+              <% if user_signed_in? %>
+            <td><%= link_to "削除", plan_path(plan.id), method: :delete, "data-confirm" => "プランを消しますか?" %></td>
+             <% end %>
+            </tr>
+          <% end %>
+        </body>
+      </table>
   </div>
 </div>

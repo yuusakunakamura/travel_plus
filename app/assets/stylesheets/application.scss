@@ -17,21 +17,8 @@
 @import "bootstrap";            /*ここを追加*/
 
 * {
- 
-
    
 }
-//いいね機能
-.iine__button{
-    background: linear-gradient(to right, #feb400, #FFE300);
-    line-height: 42px;
-    color: #6d3701;
-    font-size: 14px;
-    display: inline-block;
-    padding: 0 18px;
-    border-radius: 100px;
-    font-weight: bold;
- }
 
 body {
 width: 100%;
@@ -42,19 +29,102 @@ display: flex;
 flex-direction: column;
 }
 
-//ヘッダー関連
-header {
-  height: 70px;
- 
-}
 div {
  flex: 1;
 display: flex;
 display: block;
 }
+//メイン
 main {
   flex:1;
 }
+.new {
+  text-align: center;
+}
+
+.plan {
+  background-color: #faa;
+}
+.label {
+background-color: #faa;
+  
+}
+
+//いいね機能
+.iine {
+  text-align:center;
+}
+
+//コメント機能
+.sousin {
+  text-align: center;
+}
+//ここまで
+//ヘッダー関連
+header {
+  height: 120px;
+ }
+ .top {
+  background-color: #FFABCE;
+   height: 34px;
+}  
+.under { 
+  background-color: #110000;
+  height: 50px; 
+}
+.sign {
+  text-align: center;
+ 
+}
+.kensaku {
+  height: 30px;
+}
+#search-model {
+  height: 100px;
+}
+.search-form {
+ text-align: center;
+}
+.home {
+  text-align: center;
+}
+
+//ヘッダーここまで
+
+//フッター
+footer {
+height: 50px;
+background-color: #110000;
+color: #FF00FF;
+text-align: center;
+}
+//フッターここまで
+
+//マイページ
+.room {
+  text-align: center;
+}
+.profire {
+  margin-left: 100px;
+}
+.henkou {
+  margin-left: 100px;
+  margin-top: 20px;
+}
+.sakusei {
+  margin-left: 100px;
+}
+.itirann {
+   margin-left: 100px;
+}
+.myplan {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #f40e0dad;
+  height: 40px;
+
+}
+//マイページここまで
+//投稿
 //スケジュール
 .border-line {
   font-size: 16px;
@@ -93,7 +163,7 @@ main {
 }
 
 .scard {
-  left: 10px;
+    left: 10px;
     padding: 0.6em 0.6em 0.6em 1.2em;
     margin-left: 20px;
     margin-right: 27px;
@@ -101,7 +171,7 @@ main {
     margin-top: 10px;
     background: #b7b7b733;
 }
-  .scard-line {
+.scard-line {
       margin-left: -6.2px;
 }
 .col-1 {
@@ -133,7 +203,6 @@ border-right: 3px solid #dee2e6!important;
   margin-left: 30px;
   }
 }
-//plan_new
 .form-summary {
   adding: 10px 5px 10px 5px;
     background-color: #ffff;
@@ -166,65 +235,21 @@ border-right: 3px solid #dee2e6!important;
 .form-group {
   margin-bottom: 1rem;
 }
-//ここまで
-//マイページ
-.myroom {
-  margin-top: 50px;
+.add {
   text-align: center;
-   background-color: #FFEEFF;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
-.myroom_btn {
-  margin-top: 30px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-}
-.profire {
-   margin-left: 20px;
+.col-xs-6 btn btn-primary {
+   margin-left: 400px;
 }
 //ここまで
 
 //plan一覧 
 .index {
   text-align: center;
+  margin-left: 17px;
 }
-.top {
-	background-color: #FFABCE;
-   height: 20px;
-}  
-.under { 
-	background-color: #110000;
-  height: 50px; 
-}
-.d-flex justify-content-center {
-
-}
-
-//ヘッダーここまで
-
-//メイン
-main {
-	
-}
-.new {
-  text-align: center;
-}
-
-.plan {
-  background-color: #faa;
-}
-.icon {}
-.label {
-background-color: #faa;
-  
-}
-//フッター
-footer {
-height: 50px;
-background-color: #110000;
-color: #FF00FF;
-text-align: center;
-}
-
 
 //スライド
 #theTarget {
@@ -244,5 +269,20 @@ text-align: center;
    background-image: url(image3.jpg);
    width: 100%;  
  }
+//新規登録 ログイン画面
+.signup {
+  text-align: center;
+}
+.actions {
+ text-align: center;
+}
+.field {
+ text-align: center;
 
+}
  
+//user 
+//edit
+.myroom_image {
+  margin-left: 100px;
+}

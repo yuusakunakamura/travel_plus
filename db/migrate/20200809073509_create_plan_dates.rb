@@ -7,11 +7,8 @@ class CreatePlanDates < ActiveRecord::Migration[5.2]
     t.text :place_introduction
     t.string :picture
     t.integer :plan_id
-    
     t.time :time
-    t.date :date
-
-      t.timestamps
+    t.timestamps
     end
   end
 end

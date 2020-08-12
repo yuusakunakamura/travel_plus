@@ -1,8 +1,11 @@
 class UsersController < ApplicationController
   def index
+     @user = current_user
+     @users = User.all
   end
   def show
      @user = current_user
+     @plans = @user.plans
   end
   def update
     @user = User.find(current_user.id)
@@ -15,9 +18,7 @@ class UsersController < ApplicationController
   def edit
      @user = current_user
   end
-  def withdrawal
-    @user = current_user
-  end
+  
 
   def hide
     @user = current_user

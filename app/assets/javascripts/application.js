@@ -9,16 +9,16 @@
 //
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
-//
 
-//= require jquery
+
 //= require jquery3
 //= require rails-ujs
 //= require activestorage
 //= require turbolinks
+//= require nested_form_fields
 //= require popper
+//= require tether
 //= require bootstrap
-//= require jquery_nested_form
 //= require_tree .
 
 $(document).ready(function () {
@@ -46,16 +46,16 @@ $(document).ready(function () {
   });
  });
 
-var map = L.map('map').setView([36.3219088　, 139.0032936], 14);
+/*var map = L.map('map').setView([36.3219088　, 139.0032936], 14);*/
  
 //OSMレイヤー追加
-L.tileLayer(
+/* L.tileLayer(
 	'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
 	{
 		attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a>',
 		maxZoom: 18
 	}
 ).addTo(map);
-
+*/
 
 
