@@ -3,7 +3,9 @@ class HomesController < ApplicationController
   def index
   end
 def top
-	 @plans = Plan.all
+	@users = User.all
+
+	
 end
 
 def about

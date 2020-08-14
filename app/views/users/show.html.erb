@@ -6,10 +6,11 @@
     <div class="row">
           <div class="col-xs-4">
               <img class="profire"><%= attachment_image_tag @user, :image, format: 'jpeg', fallback: "no-image.jpg", size: "300x300" %></img>
+              <% if user_signed_in? %>
               <div class="henkou"><%= link_to 'プロフィール変更', edit_user_path, class: "col-xs-12 btn btn-success"  %></div>
               <div class="sakusei"><%= link_to "plan作成", new_plan_path, class: "sign_in glyphicon glyphicon-log-in" %>
-              <%= link_to "plan一覧", plans_path, class: "sign_in glyphicon glyphicon-log-in" %>
               </div>
+              <% end %>
           </div>
           <div class="col-xs-8">
            <h2 class="myplan">myプラン一覧</h2>
