@@ -15,6 +15,8 @@
  */
 
 @import "bootstrap";            /*ここを追加*/
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+Rounded+1c'); /*font*/
+@import url('https://fonts.googleapis.com/css?family=Kosugi');  /*font*/
 
 * {
    
@@ -22,7 +24,7 @@
 
 body {
 width: 100%;
-background-color: #EEEEEE;
+background-color: #f7f7f9;
 margin: 0;
 min-height: 100vh;
 display: flex;
@@ -62,57 +64,161 @@ background-color: #faa;
 //ここまで
 //ヘッダー関連
 header {
-  height: 120px;
+  height: 150px;
+  width: 100%;
+  line-height: 1;
+       text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+       letter-spacing: 0.125em;
+       animation-duration: 0.01s;
+       animation-name: textflicker;
+       animation-iteration-count: infinite;
+       animation-direction: alternate;
  }
  .top {
   background-color: #FFABCE;
-   height: 34px;
-}  
+  height: 53px;
+  width: 100%;
+}
+.logo {
+   color: #FF8C00;
+  background: -webkit-linear-gradient(0deg, #40E0D0, #FF8C00, #FF0080);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-top: 2px;
+}
 .under { 
   background-color: #110000;
   height: 50px; 
+   width: 100%;
 }
+.home {
+  text-align: center;
+  padding-top: 18px;
+  color: #DA8E00;
+}
+
 .sign {
   text-align: center;
+  padding-top: 10px;
+  color: #DA8E00;
  
 }
 .kensaku {
   height: 30px;
+  padding-top: 10px;
 }
-#search-model {
-  height: 100px;
+#search_model {
+  height: 30px;
+}
+#search_method {
+  height: 30px;
 }
 .search-form {
  text-align: center;
-}
-.home {
-  text-align: center;
 }
 
 //ヘッダーここまで
 
 //フッター
 footer {
-height: 50px;
+height: 55px;
 background-color: #110000;
 color: #FF00FF;
 text-align: center;
+
+line-height: 1;
+       text-shadow: 0.06rem 0 0.06rem #ea36af, -0.125rem 0 0.06rem #75fa69;
+       letter-spacing: 0.125em;
+       animation-duration: 0.01s;
+       animation-name: textflicker;
+       animation-iteration-count: infinite;
+       animation-direction: alternate;
+}
+.foot {
+  padding-top: 15px;
 }
 //フッターここまで
+//abut 
 
+.abut {
+  height: 430px;
+  font-family: 'Kosugi', sans-serif;
+}
+.title {
+background: linear-gradient(transparent 70%, #FFFF00 0%);
+width: 470px;
+margin-left:200px;
+}
+.one{
+background: linear-gradient(transparent 70%, #FFFF00 0%);
+margin-left:200px;
+width: 810px;
+margin-top: 15px;
+}
+.two {
+background: linear-gradient(transparent 70%, #FFFF00 0%);
+margin-left:200px;
+width: 690px;
+margin-top: 15px;
+}
+.three {
+background: linear-gradient(transparent 70%, #FFFF00 0%);
+margin-left:200px;
+width: 770px;
+margin-top: 15px;
+}
+@keyframes textflicker {
+  from {
+    text-shadow: 1px 0 0 #ea36af, -2px 0 0 #75fa69;
+  }
+  to {
+    text-shadow: 2px 0.5px 2px #ea36af, -1px -0.5px 2px #75fa69;
+  }
+}
+//
+
+//homeページ
+.home-content {
+   width: 98%;
+}
+.user-h {
+  text-align: center;
+   font-family: 'M PLUS Rounded 1c', sans-serif; 
+}
+.user-home {
+  
+  
+}
+.user-info {
+  background-color: #EEFFFF;
+  height: 300px;
+  width: 300px;
+  padding-top: 20px;
+  padding-left: 50px;
+  margin-left: 80px;
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.user-home-name {
+  
+}
+
+
+//
 //マイページ
 .room {
   text-align: center;
 }
 .profire {
-  margin-left: 100px;
+  margin-left: 30px;
 }
 .henkou {
   margin-left: 100px;
   margin-top: 20px;
 }
 .sakusei {
-  margin-left: 100px;
+  margin-left: 150px;
 }
 .itirann {
    margin-left: 100px;
@@ -123,8 +229,38 @@ text-align: center;
   height: 40px;
 
 }
+.table thead th {
+  text-align: center;
+}
+.table td {
+  text-align: center;
+}
 //マイページここまで
 //投稿
+//一覧
+.border-linet {
+  font-size: 16px;
+    background-color: #ffffff;
+    /* color: #f40e0dad; */
+    margin: 0 auto;
+    /* margin-bottom: 20px; */
+    padding: 0.6em 0.6rem 0.6rem 0.6em;
+    /* padding-left: 10px; */
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 800px;
+    font-size: x-large;
+    border-bottom: 1px solid #f40e0dad;
+     text-align: center; 
+}
+.boxt {
+  background-color: #ffffff;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    
+}
+
 //スケジュール
 .border-line {
   font-size: 16px;
@@ -248,7 +384,7 @@ border-right: 3px solid #dee2e6!important;
 //plan一覧 
 .index {
   text-align: center;
-  margin-left: 17px;
+ 
 }
 
 //スライド
@@ -258,15 +394,15 @@ border-right: 3px solid #dee2e6!important;
  }
 
  .image1 {
-   background-image: url(image1.jpg);
+   background-image: image-url("image1.jpg");
    width: 100%;
  }
  .image2 {
-   background-image: url(image2.jpg);
+   background-image: image-url("image2.jpg");
    width: 100%;
  }
  .image3 {
-   background-image: url(image3.jpg);
+   background-image: image-url("image3.jpg");
    width: 100%;  
  }
 //新規登録 ログイン画面

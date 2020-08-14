@@ -1,26 +1,24 @@
 
 <br>
-<h2 id="journey_summary" class="border-line">PLAN一覧</h2>
-  <div id="container" class="box">
-    <div class="index">
+<h2 id="journey_summaryi" class="border-linet">投稿者一覧</h2>
+  <div id="container" class="boxt">
     <br>
-      <table class="table table-hover ">
-        <thead>
-          <tr>
-            <th></th>
-            <th>お名前</th>
-            <th></th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-        <tbody>
+    <div class="row">
+      <div class="home-content">
+       
+        <div class="user-home">
           <% @users.each do |user| %>
-          <tr>
-            <td><img class="profire"><%= attachment_image_tag user, :image, format: 'jpeg', fallback: "image1.jpg", size: "35x35" %></img>
-            </td>
-            <td><%= user.name %></td>
-            </tr>
+           <% if user.is_withdrawal == false %>
+            <div class="user-info">
+              <%= attachment_image_tag user, :image, format: 'jpeg', fallback: "no-image.jpg", size: "200x200" %>
+                <div class="user-home-name"><%= user.name %></div>
+                 <div class="user-home-name"><%= link_to  "プロフィール", user_path(user) %></div>
+            </div>
+            <% end %>
           <% end %>
-        </body>
-      </table>
+        </div>
+      </div>
+    </div>
   </div>
+ 
+ 

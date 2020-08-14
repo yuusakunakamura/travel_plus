@@ -1,6 +1,6 @@
 <br>
-<h2 id="journey_summary" class="border-line">PLAN一覧</h2>
-  <div id="container" class="box">
+<h2 id="journey_summary" class="border-linet">PLAN一覧</h2>
+  <div id="container" class="boxt">
     <div class="index">
     <br>
       <table class="table table-hover ">
@@ -15,18 +15,17 @@
         </thead>
         <tbody>
           <% plans.each do |plan| %>
+           <% if plan.user.is_withdrawal == false %>
           <tr>
-            <td><img class="profire"><%= attachment_image_tag plan.user, :image, format: 'jpeg', fallback: "image1.jpg", size: "35x35" %></img>
+            <td><img class="profire"><%= attachment_image_tag plan.user, :image, format: 'jpeg', fallback: "no-image.jpg", size: "35x35" %></img>
             </td>
             <td><%= plan.user.name %></td>
             <td><%= plan.word %></td>
             <td><%= link_to plan.title,plan_path(plan)  %></td>
-              <% if user_signed_in? %>
-            <td><%= link_to "削除", plan_path(plan.id), method: :delete, "data-confirm" => "プランを消しますか?" %></td>
-             <% end %>
             </tr>
+            <% end %>
           <% end %>
         </body>
       </table>
+    </div>
   </div>
-</div>

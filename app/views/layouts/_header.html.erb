@@ -1,20 +1,51 @@
 <div class = "top" >
   <div class="d-flex justify-content-center"> 
-    <p>ようこそtravel_plusへ</p>
+    <h1 class="logo">travel<i class="fas fa-rocket"></i>plus</h1>
   </div>
 </div> 
   <div class = "under" >   
       <% if user_signed_in? %>
         <div class="home">
-          <%= link_to  "  Home", root_path, class: "home glyphicon glyphicon-home" %>
-          <%= link_to " logout", destroy_user_session_path, method: :delete, :class => "glyphicon glyphicon-log-out" %>
-          <%= link_to  "マイページ", user_path(current_user), class: "home glyphicon glyphicon-home" %>
+          <i class="fas fa-home">
+          <%= link_to  " Home", root_path, class: "" %>
+          </i>
+          <i class="fab fa-adn">
+          <%= link_to "about", homes_path,class: "" %>
+          </i>
+          <i class="far fa-user">
+          <%= link_to  "マイページ", user_path(current_user),class: "" %>
+          </i>
+          <i class="fas fa-plane">
+          <%= link_to "plan一覧", plans_path,class: "" %>
+          </i>
+          <i class="fas fa-users">
+            <%= link_to "user一覧", users_path,class: "" %>
+          </i>
+          <i class="fas fa-sign-out-alt">
+           <%= link_to " logout", destroy_user_session_path, method: :delete %>
+          </i>
+        </div>
         </div>
       <% else %>
         <div class="sign">
+           <i class="fas fa-home">
+          <%= link_to  " Home", root_path, class: "Home glyphicon glyphicon-home" %>
+          <i class="fab fa-adn">
+          <%= link_to "about", homes_path,class: "" %>
+          </i>
+          </i>
+          <i class="fas fa-user-plus">
           <%= link_to "  Sign Up", new_user_registration_path, class: "sign_up glyphicon glyphicon-edit" %>
+          </i>
+          <i class="fas fa-sign-in-alt">
           <%= link_to "  login", new_user_session_path, class: "sign_in glyphicon glyphicon-log-in" %>
+          </i>
+          <i class="fas fa-plane">
           <%= link_to "plan一覧", plans_path, class: "sign_in glyphicon glyphicon-log-in" %>
+          </i>
+          <i class="fas fa-users">
+          <%= link_to "user一覧", users_path, class: "sign_in glyphicon glyphicon-log-in" %>
+          </i>
         </div>
       <% end %>
   </div>
