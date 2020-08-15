@@ -6,7 +6,7 @@ class CreatePlanDates < ActiveRecord::Migration[5.2]
     t.string :place_name
     t.text :place_introduction
     t.string :picture
-    t.integer :plan_id
+    t.references :plan, foreign_key:true
     t.time :time
     t.timestamps
     end

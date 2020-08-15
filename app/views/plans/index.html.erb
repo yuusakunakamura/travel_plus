@@ -1,2 +1,37 @@
- <%= render 'plans/index', plans: @plans %>
+<br>
+<% if flash[:notice]%>
+    <%= flash[:notice] %>
+    <% end %>
+<h2 id="journey_summary" class="border-linet">PLAN一覧</h2>
+  <div id="container" class="boxt">
+    <div class="index">
+    <br>
+      <table class="table table-hover ">
+        <thead>
+          <tr>
+            <th></th>
+            <th>お名前</th>
+            <th>検索ワード</th>
+            <th>プランタイトル</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @plans.each do |plan| %>
+           <% if plan.user.is_withdrawal == false %>
+          <tr>
+            <td><img class="profire"><%= attachment_image_tag plan.user, :image, format: 'jpeg', fallback: "no-image.jpg", size: "35x35" %></img>
+            </td>
+            <td><%= plan.user.name %></td>
+            <td><%= plan.word %></td>
+            <td><%= link_to plan.title,plan_path(plan)  %></td>
+            </tr>
+            <% end %>
+          <% end %>
+        </body>
+      </table>
+      <div class="page"><%= paginate @plans %></div>
+    </div>
+  </div>
+
 
