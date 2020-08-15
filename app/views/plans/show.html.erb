@@ -8,20 +8,20 @@
   <div id="containerr" class="box">
     <div id="joruney_summary_box">
       <div class="simmary">
-        <div id="summary_title_0" style="padding-left: 10px; padding-top: 20px;font-size: 16px;font-weight:bold;">
+        <div id="summary_word" style="padding-left: 10px; padding-top: 20px;font-size: 16px;font-weight:bold;">
           <%= @plan.word %>
         </div>
-        <div id="summary_title_0" style="padding-left: 10px; padding-top: 20px;font-size: 16px;font-weight:bold;">
+        <div id="summary_title" style="padding-left: 10px; padding-top: 20px;font-size: 16px;font-weight:bold;">
           <%= @plan.title %>
         </div>
         <br>
-        <div id="summary_desc_0" style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; background-color:#b7b7b733; margin-left: 10px; margin-right: 10px; font-size:14px; "><%= @plan.introduction %>
+        <div id="summary_desc" style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; background-color:#b7b7b733; margin-left: 10px; margin-right: 10px; font-size:14px; "><%= @plan.introduction %>
         </div>
       </div>
     </div>
     <br>
   </div>
-<h2 id="journey_summary" class="border-line">スケジュール</h2>
+<h2 id="journey_summarys" class="border-line">スケジュール</h2>
   <div id="con" class="box" style="height: auto !important;">
     <div id="schedule_box">
       <br>
@@ -43,24 +43,30 @@
             <h5 class>
               <i class="far fa-circle"></i>
             </h5>
-            <div class="row h-50">
+            <div class="row h-75">
               <div class="col-1 scard-line"></div>
             </div>
           </div>
           <div class="col scard">
             <i class="far fa-clock"></i>
-            <div class="time and place">
-              <%= plan.time.strftime('%H:%M') %>
-              <i class="fas fa-map-marker-alt"></i>
-              <%= plan.place_name %>
-              <div class="memo">
-                <%= plan.place_introduction%>
+            <div class="row">
+              <div class="col-xs-12">
+                <div class="time and place">
+                  <%= plan.time.strftime('%H:%M') %>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <%= plan.place_name %>
+                  <div class="memo">
+                    <%= plan.place_introduction%>
+                 </div>
+                 <div>
+                   想定予算<%= plan.price%>円
+                 </div>
+                </div>
               </div>
-              <div>
-                 想定予算<%= plan.price%>円
-              </div>
-              <div class="place_image">
-                <img class="plan_image"><%= attachment_image_tag plan, :image, format: 'jpeg',size: "100x100" %></img>
+              <div class="col-xs-1">
+                <div class="place_image">
+                  <img class="plan_image"><%= attachment_image_tag plan, :image, format: 'jpeg',size: "100x100" %></img>
+                </div>
               </div>
             </div>
           </div>
@@ -71,7 +77,7 @@
 <br>
 <br>
 <% if user_signed_in? %>
-  <h2 id="journey_summary" class="border-line">いいね</h2>
+  <h2 id="journey_summary_ine" class="border-line">いいね</h2>
   <div id="iine"class="box">
     <div id="iine_box" class="iine_box">
       <div id="likes_buttons_<%= @plan.id %>">
@@ -80,7 +86,7 @@
     <div>
   </div>
   <br>
-  <h2 id="journey_summary" class="border-line">コメント</h2>
+  <h2 id="journey_summary_come" class="border-line">コメント</h2>
   <div id="comment"class="box">
     <div id="comment_box" class="comment_box">
       <% @plan.comments.each do |comment| %>

@@ -11,8 +11,7 @@ class PlansController < ApplicationController
    if @plan.save
            redirect_to plan_path(@plan)
           else
-            @plans = Plan.all
-            render 'index'
+            render new_plan_path(@plan) ,notice: '全ての項目を記入して下さい'
   end
 end
 def show
@@ -24,7 +23,7 @@ def show
   end
 
   def index
-  @plans = Plan.all
+  @plans = Plan.all.page(params[:page]).per(2)
 
   end
 
@@ -40,14 +39,14 @@ def show
   	redirect_to plan_path(@plan)
   end 
   def destroy
-    plan = Plan.find(params[:id]) #データ(レコード)を1件取得
-          plan.destroy #データ（レコード）を削除
-          redirect_to plans_path #List一覧画面へリダイレクト
+    @plan = Plan.find(params[:id]) #データ(レコード)を1件取得
+          @plan.destroy #データ（レコード）を削除
+          redirect_to user_path(@plan.user) #List一覧画面へリダイレクト
   end
     
   private
   def plan_params
-  	params.require(:plan).permit(:word,:title,:user_id,:picture,:introduction,:date, plan_dates_attributes: [:image,:price,:place_name,:place_introduction,:time])
+  	params.require(:plan).permit(:word,:title,:user_id,:picture,:introduction,:date,:plan_dates_attributes =>[:_destroy,:id,:image,:price,:place_name,:place_introduction,:time])
   end
    def baria_user
     unless Plan.find(params[:id]).user.id.to_i == current_user.id

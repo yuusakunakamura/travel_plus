@@ -86,4 +86,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 
-gem "nested_form_fields"
+gem "nested_form"
+gem 'kaminari'
+gem 'pry-byebug'

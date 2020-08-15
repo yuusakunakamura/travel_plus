@@ -21,6 +21,15 @@
 * {
    
 }
+.page {
+  text-align: center;
+}
+.pagination{
+display: inline-flex;
+  padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+}
 
 body {
 width: 100%;
@@ -58,6 +67,9 @@ background-color: #faa;
 }
 
 //コメント機能
+#comment_box.comment_box {
+  text-align: center;
+}
 .sousin {
   text-align: center;
 }
@@ -190,15 +202,19 @@ margin-top: 15px;
   
 }
 .user-info {
-  background-color: #EEFFFF;
-  height: 300px;
-  width: 300px;
-  padding-top: 20px;
-  padding-left: 50px;
-  margin-left: 80px;
-  display: inline-block;
-  margin-top: 15px;
-  margin-bottom: 15px;
+
+
+  background-color: #fbe8e7;
+    height: 300px;
+    width: 300px;
+    padding-top: 20px;
+    padding-left: 50px;
+    margin-left: 80px;
+    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border: solid;
+    border-color: coral;
 }
 .user-home-name {
   
@@ -260,7 +276,9 @@ margin-top: 15px;
     margin: 0 auto;
     
 }
-
+.time and place {
+  width: 400px;
+}
 //スケジュール
 .border-line {
   font-size: 16px;
@@ -370,11 +388,17 @@ border-right: 3px solid #dee2e6!important;
 }
 .form-group {
   margin-bottom: 1rem;
-}
+} 
 .add {
-  text-align: center;
+  margin-left: 30px;
   padding-top: 5px;
   padding-bottom: 5px;
+}
+.sinki {
+  text-align: center;
+}
+.btn.btn-sucess {
+  
 }
 .col-xs-6 btn btn-primary {
    margin-left: 400px;

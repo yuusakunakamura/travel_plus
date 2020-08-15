@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2020_08_09_073509) do
     t.time "time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["plan_id"], name: "index_plan_dates_on_plan_id"
   end
 
   create_table "plan_tags", force: :cascade do |t|
