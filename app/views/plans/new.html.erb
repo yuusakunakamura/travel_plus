@@ -1,6 +1,5 @@
-<main>
-  <%= form_for(@plan) do |f| %>
-    <div class="container" style="padding-left: 0px;padding-right: 0px;">
+<%= nested_form_for(@plan) do |f| %>
+  <div class="container" style="padding-left: 0px;padding-right: 0px;">
     <br>
     <h2 class="border-line">PLAN概要</h2>
       <div id="main_box" class="form-summary">
@@ -19,7 +18,7 @@
               </div>
               <div class="form-group">
                 <%= f.label :旅行予定日 %><br />
-                <%= raw sprintf(f.date_select(:date, prompt:"--", use_month_numbers: true,date_separator:'%s'),'年','月')+'日' %>
+                <%= raw sprintf(f.date_select(:date, prompt:"--", use_month_numbers: true, start_year:2020,start_month:8,date_separator:'%s'),'年','月')+'日' %>
               </div>
 	          </div>
       	  </div>
@@ -28,7 +27,7 @@
     </div>
     <br>
       <h2 class="border-line">スケジュール</h2>
-       <%= f.nested_fields_for :plan_dates, wrapper_tag: :div do |q| %>
+       <%= f.fields_for :plan_dates do |f| %>
           <div id="schedule_box" class="form-summary" onedaybox-cnt="1">
             <div id="oneday_box" class="form-summary card">
               <div id="card_header">
@@ -38,21 +37,24 @@
                     <div id="card" class="card">
                       <div class="card-body">
                         <div class="form-group">
-                          <%= q.label :時間 %><br />
-                          <%= q.time_select :time, prompt:"--", ignore_data:true %>
+                          <%= f.label :時間 %><br />
+                          <%= f.time_select :time, prompt:"--", ignore_data:true %>
                         </div>
                         <div class="form-group">
-                          <%= q.text_field :place_name,placeholder:"場所名",:style=>"width:500px;" %>
+                          <%= f.text_field :place_name,placeholder:"場所名",:style=>"width:500px;" %>
                         </div>
                         <div class="form-group">
-                          <%= q.text_field :place_introduction,placeholder:"メモ書き",:style=>"width:500px;" %>
+                          <%= f.text_field :place_introduction,placeholder:"メモ書き",:style=>"width:500px;" %>
                         </div>
                         <div class="form-group">
-                          <%= q.text_field :price,placeholder:"予算",:style=>"width:500px;" %>
+                          <%= f.text_field :price,placeholder:"予算",:style=>"width:500px;" %>
                         </div>
                         <div class="form-group">
-                          <%= q.label :お好きな写真 %><br />
-                          <%= q.attachment_field :image %>
+                          <%= f.label :お好きな写真 %><br />
+                          <%= f.attachment_field :image %>
+                        </div>
+                        <div>
+                           <%= f.link_to_remove '削除', class: 'btn btn-danger', role: 'button' %>
                         </div>
                       </div>
                     </div>
@@ -62,11 +64,10 @@
           </div>
         <% end %>
         <div class="add">
-          <%= f.remove_nested_fields_link 'Delete', class: 'btn btn-danger', role: 'button' %>
-          <%= f.add_nested_fields_link :plan_dates, 'Add new', class: 'btn btn-primary', role: 'button' %>
+        <%= f.link_to_add '追加',:plan_dates,class: 'btn btn-info', role: 'button',:style=>"width:200px;margin-left: 210px;"  %>
         </div>
+      <div class="sinki">
+      <%= f.submit "新規登録", class: " btn btn-sucess",:style=>"width:200px;margin-left: 10px;" %>
       </div>
-      <%= f.submit "新規登録", class: " btn btn-sucess",:style=>"width:200px;margin-left: 620px;" %>
-    </div>
-    <% end %>
-</main>
+  </div>
+<% end %>
