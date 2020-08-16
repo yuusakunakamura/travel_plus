@@ -14,7 +14,7 @@
     <div class="home-content">
       <h1 class="user-h">投稿者のピックアップ</h1>
         <div class="user-home">
-          <% @users.shuffle.first(3).each do |user| %>
+          <% @users.first(3).each do |user| %>
             <% if user.is_withdrawal == false %>
               
               <div class="user-info">
