@@ -88,4 +88,7 @@ gem 'mini_magick'
 
 gem "nested_form"
 gem 'kaminari'
+gem 'pry-rails'
 gem 'pry-byebug'
+gem 'dotenv-rails'
+gem 'google-cloud-vision'

@@ -8,13 +8,23 @@ class UsersController < ApplicationController
      @plans = @user.plans
   end
   def update
-    @user = User.find(current_user.id)
-    if @user.update(user_params)
-    redirect_to user_path(current_user.id), notice: "successfully updated user!"
+    @user = current_user
+    #画像が編集された時
+    #パラメーター(画像)を「tempfile」として開いて変数に代入
+    #image = File.open(params[:user][:image])
+    # Cloud Vision APIで画像分析して、分析結果を変数に代入
+    result = Vision.get_image_data(params[:user][:image]) unless params[:user][:image].is_a?(String)
+    # 解析結果によって条件分岐
+    if result.nil? || result.values.include?('VERY_LIKELY')
+    # exclude adult very likely
+    # if result.nil? || result["adult"] == 'VERY_LIKELY' || result["vaolence"] == 'VERY_LIKELY'
+      render "edit"
     else
-        render "edit"
+      @user.update(user_params)
+      return redirect_to user_path(current_user.id), notice: "successfully updated user!"
     end
   end
+
   def edit
      @user = current_user
   end
