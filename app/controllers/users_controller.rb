@@ -8,7 +8,7 @@ class UsersController < ApplicationController
      @plans = @user.plans
   end
   def update
-    @user = current_user
+   @user = current_user
     #画像が編集された時
     #パラメーター(画像)を「tempfile」として開いて変数に代入
     #image = File.open(params[:user][:image])

@@ -8,19 +8,24 @@ class PlansController < ApplicationController
   def create
   @plan = Plan.new(plan_params)
   @plan.user_id = current_user.id
-   if @plan.save
-           redirect_to plan_path(@plan)
-          else
-            render new_plan_path(@plan) ,notice: '全ての項目を記入して下さい'
+
+  result = Vision.get_image_data(params[:plan][:plan_dates_attributes]["0"][:image]) unless params[:plan][:plan_dates_attributes]["0"][:image].is_a?(String) 
+     
+     # 画像解析
+  if result.nil? || result.values.exclude?('VERY_LIKELY')
+     @plan.save
+     redirect_to plan_path(@plan)
+  else
+     render new_plan_path(@plan) ,notice: '全ての項目を記入して下さい'
+  end 
   end
-end
 def show
     @plan = Plan.find(params[:id])
     @user = @plan.user
     @like = Like.new
     @comment = Comment.new
     @comments = @plan.comments
-  end
+  end 
 
   def index
   @plans = Plan.all.page(params[:page]).per(2)
@@ -35,8 +40,13 @@ def show
 
   def update
   	@plan = Plan.find(params[:id])
+    result = Vision.get_image_data(params[:plan][:plan_dates_attributes]["0"][:image])
+    if result.nil? || result.values.exclude?('VERY_LIKELY')
   	@plan.update(plan_params)
   	redirect_to plan_path(@plan)
+  else
+    render "edit"
+  end
   end 
   def destroy
     @plan = Plan.find(params[:id]) #データ(レコード)を1件取得
