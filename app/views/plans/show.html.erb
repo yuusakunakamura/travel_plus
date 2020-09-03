@@ -89,23 +89,17 @@
   <h2 id="journey_summary_come" class="border-line">コメント</h2>
   <div id="comment"class="box">
     <div id="comment_box" class="comment_box">
-      <% @plan.comments.each do |comment| %>
-        <div>
-          <%= comment.content %>
-          <%= link_to "destroy",plan_comment_path(comment.plan,comment),method: :delete  %>
-        </div>
+       <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
+      <%= render partial: 'comments/index', locals: { comments: @comments } %>
+    </div>  
+    <% if user_signed_in? %>
+      <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->
+      <%= render partial: 'comments/form', locals: { comment: @comment, plan: @plan } %>
+    <% end %>
       <% end %>
       <br>
-    </div>
-    <div id="form" class="box">
-      <div id="form_box" class="form_box">
-        <%= form_for [@plan, @comment] do |f| %>
-          <div class="form text"><%= f.text_area :content %></div>
-          <div class="sousin"><%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %></div>
-      <% end %>
     </div>
   </div>
 </div>
 </div>
 </div>
-<% end %>
