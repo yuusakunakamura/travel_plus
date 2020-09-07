@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'base64'
 require 'json'
 require 'net/https'
@@ -7,14 +9,14 @@ module Vision
       # APIのURL作成
       api_url = "https://vision.googleapis.com/v1/images:annotate?key=#{ENV['GOOGLE_VISION_API_KEY']}"
       # 画像をbase64にエンコード
-       base64_image = Base64.encode64(open(image_file.tempfile.path).read)
+      base64_image = Base64.encode64(open(image_file.tempfile.path).read)
       # APIリクエスト用のJSONパラメータ
       params = {
         requests: [{
           image: {
             content: base64_image
           },
-            features: [
+          features: [
             {
               type: 'SAFE_SEARCH_DETECTION'
             }
