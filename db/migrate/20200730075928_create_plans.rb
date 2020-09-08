@@ -8,7 +8,8 @@ class CreatePlans < ActiveRecord::Migration[5.2]
       t.string :picture
       t.integer :user_id
       t.date :date
-      t.string :word
+      t.integer :word, null: false, default: 0
+      t.integer :oversea, null: false, default: 0
       t.timestamps
     end
   end

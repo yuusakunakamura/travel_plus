@@ -94,3 +94,4 @@ gem 'nested_form'
 gem 'pry-byebug'
 gem 'pry-rails'
 gem 'rails-i18n' 
+gem 'ancestry' #多層階カテゴリ

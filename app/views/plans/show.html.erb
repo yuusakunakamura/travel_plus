@@ -9,7 +9,12 @@
     <div id="joruney_summary_box">
       <div class="simmary">
         <div id="summary_word" style="padding-left: 10px; padding-top: 20px;font-size: 16px;font-weight:bold;">
+         <% if Plan.words[@plan.word].to_i > 0 %>
           <%= @plan.word %>
+         <% end %>
+         <% if Plan.overseas[@plan.oversea].to_i > 0 %>
+          <%= @plan.oversea %>
+        <% end %>
         </div>
         <div id="summary_title" style="padding-left: 10px; padding-top: 20px;font-size: 16px;font-weight:bold;">
           <%= @plan.title %>

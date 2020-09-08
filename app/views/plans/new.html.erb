@@ -6,9 +6,19 @@
         <div id="summary_box">
       	  <div class="card">
       		  <div class="card-body">
+
               <div class="form-group">
-                <%= f.label :都道府県名または国名を記入して下さい%><br />
-                <%= f.text_field :word,placeholder:"検索ワード" %>
+                <%= f.label :旅行先を選択して下さい%><br />
+                <ul>
+  　　　　　　      <li><input type="radio" name="btn" id="a" checked="checked">国内</li>
+                  <li><input type="radio" name="btn" id="b">国外</li>
+                </ul>
+                <div class="text text01">
+                <%= f.select :word, Plan.words.keys, {}, {class: 'hoge'} %>
+                </div>
+                <div class="text text02">
+                <%= f.select :oversea, Plan.overseas.keys, {}, {class: 'hoge'} %>
+                </div>
               </div>
               <div class="form-group">
                 <%= f.text_field :title,placeholder:"プランタイトル" %>
@@ -20,7 +30,7 @@
                 <%= f.label :旅行予定日 %><br />
                 <%= raw sprintf(f.date_select(:date, prompt:"--", use_month_numbers: true, start_year:2020,start_month:8,date_separator:'%s'),'年','月')+'日' %>
               </div>
-	          </div>
+	          </div> 
       	  </div>
         </div>
       </div>

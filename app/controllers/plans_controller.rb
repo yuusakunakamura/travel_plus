@@ -17,8 +17,11 @@ class PlansController < ApplicationController
 
     # 画像解析
     if result.nil? || result.values.exclude?('VERY_LIKELY')
-      @plan.save
-      redirect_to plan_path(@plan)
+      if @plan.save
+        redirect_to plan_path(@plan)
+      else
+        render new_plan_path(@plan), notice: '全ての項目を記入して下さい'
+      end
     else
       render new_plan_path(@plan), notice: '全ての項目を記入して下さい'
     end
@@ -60,10 +63,10 @@ class PlansController < ApplicationController
   private
 
   def plan_params
-    params.require(:plan).permit(:word, :title, :user_id, :picture, :introduction, :date, plan_dates_attributes: %i[_destroy id image price place_name place_introduction time])
+    params.require(:plan).permit(:oversea,:word, :title, :user_id, :picture, :introduction, :date, plan_dates_attributes: %i[_destroy id image price place_name place_introduction time])
   end
-
   def baria_user
     redirect_to plans_path(@plan) unless Plan.find(params[:id]).user.id.to_i == current_user.id
   end
+
 end
