@@ -9,10 +9,6 @@
 
               <div class="form-group">
                 <%= f.label :旅行先を選択して下さい%><br />
-                <ul>
-  　　　　　　      <li><input type="radio" name="btn" id="a" checked="checked">国内</li>
-                  <li><input type="radio" name="btn" id="b">国外</li>
-                </ul>
                 <div class="text text01">
                 <%= f.select :word, Plan.words.keys, {}, {class: 'hoge'} %>
                 </div>

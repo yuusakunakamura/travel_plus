@@ -9,7 +9,7 @@
           <tr>
             <th></th>
             <th>お名前</th>
-            <th>検索ワード</th>
+            <th>旅行先</th>
             <th>プランタイトル</th>
             <th colspan="3"></th>
           </tr>
@@ -21,7 +21,12 @@
             <td><img class="profire"><%= attachment_image_tag plan.user, :image, format: 'jpeg', fallback: "no-image.jpg", size: "35x35" %></img>
             </td>
             <td><%= plan.user.name %></td>
+            <% if Plan.words[plan.word].to_i > 0 %>
             <td><%= plan.word %></td>
+            <% end %>
+            <% if Plan.overseas[plan.oversea].to_i > 0 %>
+            <td><%= plan.oversea %></td>
+            <% end %>
             <td><%= link_to plan.title,plan_path(plan)  %></td>
             </tr>
             <% end %>

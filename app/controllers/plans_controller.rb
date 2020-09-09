@@ -45,10 +45,15 @@ class PlansController < ApplicationController
 
   def update
     @plan = Plan.find(params[:id])
-    result = Vision.get_image_data(params[:plan][:plan_dates_attributes]['0'][:image])
+     unless params[:plan][:plan_dates_attributes]['0'][:image].is_a?(String)
+      result = Vision.get_image_data(params[:plan][:plan_dates_attributes]['0'][:image])
+    end
     if result.nil? || result.values.exclude?('VERY_LIKELY')
-      @plan.update(plan_params)
+     if @plan.update(plan_params)
       redirect_to plan_path(@plan)
+     else
+      render 'edit'
+     end
     else
       render 'edit'
     end

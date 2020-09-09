@@ -19,13 +19,13 @@ class UsersController < ApplicationController
     # Cloud Vision APIで画像分析して、分析結果を変数に代入
     result = Vision.get_image_data(params[:user][:image]) unless params[:user][:image].is_a?(String)
     # 解析結果によって条件分岐
-    if result.nil? || result.values.include?('VERY_LIKELY')
+    if result.nil? || result.values.exclude?('VERY_LIKELY')
       # exclude adult very likely
       # if result.nil? || result["adult"] == 'VERY_LIKELY' || result["vaolence"] == 'VERY_LIKELY'
-      render 'edit'
-    else
       @user.update(user_params)
       redirect_to user_path(current_user.id), notice: 'successfully updated user!'
+    else
+      render 'edit'
     end
   end
 

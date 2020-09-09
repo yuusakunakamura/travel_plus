@@ -21,6 +21,14 @@
 * {
    
 }
+#error_explanation {
+  margin-left: 320px;
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
 .text {
   display: none;
 }
@@ -28,7 +36,7 @@
   display: block;
 }
 .page {
-  text-align: center;
+  atext-lign: center;
 }
 .pagination{
 display: inline-flex;

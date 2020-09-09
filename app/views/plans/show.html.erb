@@ -9,6 +9,7 @@
     <div id="joruney_summary_box">
       <div class="simmary">
         <div id="summary_word" style="padding-left: 10px; padding-top: 20px;font-size: 16px;font-weight:bold;">
+         <string>旅行先</string></br>
          <% if Plan.words[@plan.word].to_i > 0 %>
           <%= @plan.word %>
          <% end %>
@@ -17,9 +18,11 @@
         <% end %>
         </div>
         <div id="summary_title" style="padding-left: 10px; padding-top: 20px;font-size: 16px;font-weight:bold;">
+           <string>プランタイトル</string></br>
           <%= @plan.title %>
         </div>
         <br>
+        <string>プランメモ</string></br>
         <div id="summary_desc" style="padding-left: 10px; padding-right: 10px; padding-top: 10px; padding-bottom: 10px; background-color:#b7b7b733; margin-left: 10px; margin-right: 10px; font-size:14px; "><%= @plan.introduction %>
         </div>
       </div>
