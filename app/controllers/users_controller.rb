@@ -3,12 +3,12 @@
 class UsersController < ApplicationController
   def index
     @user = current_user
-    @users = User.all.page(params[:page]).per(6)
+    @users = User.all.page(params[:page]).per(2)
   end
 
   def show
     @user = User.find(params[:id])
-    @plans = @user.plans
+    @plans = @user.plans.page(params[:page]).per(2)
   end
 
   def update
@@ -39,6 +39,14 @@ class UsersController < ApplicationController
     reset_session
     flash[:notice] = 'ありがとうございました。またのご利用を心よりお待ちしております。'
     redirect_to root_path
+  end
+
+  def search
+    if params[:name].present?
+      @users = User.where('name LIKE ?', "%#{params[:name]}%").page(params[:page]).per(2)
+    else
+      @users = User.all..page(params[:page]).per(2)
+    end
   end
 
 

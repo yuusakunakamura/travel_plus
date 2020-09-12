@@ -2,7 +2,6 @@
 
 class Plan < ApplicationRecord
   belongs_to :user
-  
 
   has_many :likes # いいね機能
   has_many :liked_users, through: :likes, source: :user

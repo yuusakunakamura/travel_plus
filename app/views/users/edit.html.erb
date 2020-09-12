@@ -1,14 +1,13 @@
 <div class="myroom">
-          <h2 class="pageTitle">登録情報編集</h2>
-          
-          <%= form_for(@user) do |f| %>
-                 <div><%= f.label :お名前 %><br />
-                 <%= f.text_field :name, autofocus: true,placeholder:""%></div>
-                <div class="myroom_image"><%= f.attachment_field :image %></div>
-                 <div><%= f.submit "登録内容を保存する" %></div>
-          <% end %>
+  <h2 class="signup">登録情報編集</h2>
+  <%= form_for(@user) do |f| %>
+    <div class="field"><%= f.label :お名前 %><br />
+    <%= f.text_field :name, autofocus: true,placeholder:""%></div>
+    <div class="field"><%= f.attachment_field :image %></div>
+    <div class="field"><%= f.submit "登録内容を保存する" %></div>
+  <% end %>
+  <div class="field"><%= link_to "パスワード変更", edit_user_registration_path %></div>
+  <% if user_signed_in? && @user == current_user %>
+    <div class="field"><%= link_to "退会", users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger" %></div>
+  <% end %>
 </div>
- <div><%= link_to "パスワード変更", edit_user_registration_path %></div>
- <% if user_signed_in? && @user == current_user %>
-        <div><%= link_to "退会", users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger" %></div>
-<% end %>

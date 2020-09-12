@@ -57,7 +57,7 @@ class PlansController < ApplicationController
     else
       render 'edit'
     end
-  end
+  end 
 
   def destroy
     @plan = Plan.find(params[:id]) # データ(レコード)を1件取得
@@ -65,6 +65,15 @@ class PlansController < ApplicationController
     redirect_to user_path(@plan.user) # List一覧画面へリダイレクト
   end
 
+   def search
+    if params[:word].present?
+      @plans = Plan.where(word:params[:word]).page(params[:page]).per(2)
+    elsif params[:oversea].present?
+      @plans = Plan.where(oversea:params[:oversea]).page(params[:page]).per(2)
+    else
+      Plan.all.page(params[:page]).per(2)
+    end
+   end
   private
 
   def plan_params

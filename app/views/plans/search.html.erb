@@ -1,18 +1,5 @@
-<h1>旅行先で検索</h1>
-<ul>
-  <li><input type="radio" name="btn" id="a" checked="checked">国内</li>
-  <li><input type="radio" name="btn" id="b">国外</li>
-</ul>
-<%= form_with url: search_plans_path, method: :get, local: true do |f| %>
-  <div class="text text01">
-    <%= f.select :word, Plan.words.keys, {}, {class: 'hoge'} %>
-  </div>
-  <div class="text text02">
-  <%= f.select :oversea, Plan.overseas.keys, {}, {class: 'hoge'} %>
-  </div>
-  <%= f.submit :search %>
-  <% end %>
-<br> 
+
+<br>
 
 <h2 id="journey_summary" class="border-linet">PLAN一覧</h2>
   <div id="container" class="boxt">
@@ -50,5 +37,3 @@
       <div class="page"><%= paginate @plans %></div>
     </div>
   </div>
-
-
