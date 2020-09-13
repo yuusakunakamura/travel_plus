@@ -65,6 +65,10 @@ group :test do
   gem 'chromedriver-helper'
 end
 
+group :development, :test do
+   gem 'rspec-rails'
+end
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
@@ -90,6 +94,7 @@ gem 'mini_magick'
 gem 'dotenv-rails'
 gem 'google-cloud-vision'
 gem 'kaminari'
+
 gem 'nested_form'
 gem 'pry-byebug'
 gem 'pry-rails'
