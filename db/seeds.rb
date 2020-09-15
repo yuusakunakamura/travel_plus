@@ -9,38 +9,68 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 # coding: utf-8
+ 
+Plan.create(:word => "県を選択して下さい", :oversea => "アジア州")
+Plan.create(:word => "県を選択して下さい", :oversea => "北アメリカ州")
+Plan.create(:word => "県を選択して下さい", :oversea => "南アメリカ州")
+Plan.create(:word => "県を選択して下さい", :oversea => "ヨーロッパ州")
+Plan.create(:word => "県を選択して下さい", :oversea => "アフリカ州")
+Plan.create(:word => "県を選択して下さい", :oversea => "オセアニア州")
 
-domestic = Trip.create(:name=>"国内")
+Plan.create(:word => "北海道", :oversea => "州を選択して下さい")
+Plan.create(:word => "青森県", :oversea => "州を選択して下さい")
+Plan.create(:word => "岩手県", :oversea => "州を選択して下さい")
+Plan.create(:word => "宮城県", :oversea => "州を選択して下さい")
+Plan.create(:word => "秋田県", :oversea => "州を選択して下さい")
+Plan.create(:word => "山形県", :oversea => "州を選択して下さい")
+Plan.create(:word => "福島県", :oversea => "州を選択して下さい")
+Plan.create(:word => "茨城県", :oversea => "州を選択して下さい")
+Plan.create(:word => "栃木県", :oversea => "州を選択して下さい")
+Plan.create(:word => "群馬県", :oversea => "州を選択して下さい")
+Plan.create(:word => "埼玉県", :oversea => "州を選択して下さい")
+Plan.create(:word => "千葉県", :oversea => "州を選択して下さい")
+Plan.create(:word => "東京都", :oversea => "州を選択して下さい")
+Plan.create(:word => "神奈川県", :oversea => "州を選択して下さい")
+Plan.create(:word => "新潟県", :oversea => "州を選択して下さい")
+Plan.create(:word => "富山県", :oversea => "州を選択して下さい")
+Plan.create(:word => "石川県", :oversea => "州を選択して下さい")
+Plan.create(:word => "福井県", :oversea => "州を選択して下さい")
+Plan.create(:word => "山梨県", :oversea => "州を選択して下さい")
+Plan.create(:word => "長野県", :oversea => "州を選択して下さい")
+Plan.create(:word => "岐阜県", :oversea => "州を選択して下さい")
+Plan.create(:word => "静岡県", :oversea => "州を選択して下さい")
+Plan.create(:word => "愛知県", :oversea => "州を選択して下さい")
+Plan.create(:word => "三重県", :oversea => "州を選択して下さい")
+Plan.create(:word => "滋賀県", :oversea => "州を選択して下さい")
+Plan.create(:word => "京都府", :oversea => "州を選択して下さい")
+Plan.create(:word => "大阪府", :oversea => "州を選択して下さい")
+Plan.create(:word => "兵庫県", :oversea => "州を選択して下さい")
+Plan.create(:word => "奈良県", :oversea => "州を選択して下さい")
+Plan.create(:word => "和歌山県", :oversea => "州を選択して下さい")
+Plan.create(:word => "鳥取県", :oversea => "州を選択して下さい")
+Plan.create(:word => "島根県", :oversea => "州を選択して下さい")
+Plan.create(:word => "岡山県", :oversea => "州を選択して下さい")
+Plan.create(:word => "広島県", :oversea => "州を選択して下さい")
+Plan.create(:word => "山口県", :oversea => "州を選択して下さい")
+Plan.create(:word => "徳島県", :oversea => "州を選択して下さい")
+Plan.create(:word => "香川県", :oversea => "州を選択して下さい")
+Plan.create(:word => "愛媛県", :oversea => "州を選択して下さい")
+Plan.create(:word => "高知県", :oversea => "州を選択して下さい")
+Plan.create(:word => "福岡県", :oversea => "州を選択して下さい")
+Plan.create(:word => "佐賀県", :oversea => "州を選択して下さい")
+Plan.create(:word => "長崎県", :oversea => "州を選択して下さい")
+Plan.create(:word => "熊本県", :oversea => "州を選択して下さい")
+Plan.create(:word => "大分県", :oversea => "州を選択して下さい")
+Plan.create(:word => "宮崎県", :oversea => "州を選択して下さい")
+Plan.create(:word => "鹿児島県", :oversea => "州を選択して下さい")
+Plan.create(:word => "沖縄県", :oversea => "州を選択して下さい")
 
-hokkaidou = domestick.children.create(:name=>"北海道地方")
 
-touhoku = domestick.children.create(:name=>"東北地方")
 
-kanntou = domestick.children.create(:name=>"関東地方")
 
-chuubu = domestick.children.create(:name=>"中部地方")
 
-kinki = domestick.children.create(:name=>"近畿地方")
 
-chuugoku = domestick.children.create(:name=>"中国地方")
 
-sikoku = domestick.children.create(:name=>"四国地方")
-
-kyuusyuu = domestick.children.create(:name=>"九州・沖縄地方")
-
-hokkaidou.children.create([{:name=>"北海道"}])
-
-touhoku.children.create([{:name=>"青森県"},{:name=>"岩手県"},{:name=>"宮城県"},{:name=>"秋田県"},{:name=>"山形県"},{:name=>"福島県"}])
-
-kanntou.children.create([{:name=>"茨城県"},{:name=>"栃木県"},{:name=>"群馬県"},{:name=>"埼玉県"},{:name=>"千葉県"},{:name=>"東京都"},{:name=>"神奈川県"}])
-
-chuubu.children.create([{:name=>"新潟県"},{:name=>"富山県"},{:name=>"石川県"},{:name=>"福井県"},{:name=>"長野県"},{:name=>"山梨県"},{:name=>"岐阜県"},{:name=>"静岡県"},{:name=>"愛知県"}])
-
-kinki.children.create([{:name=>"三重県"},{:name=>"滋賀県"},{:name=>"京都府"},{:name=>"大阪府"},{:name=>"兵庫県"},{:name=>"奈良県"},{:name=>"和歌山県"}])
-
-chuugoku.children.create([{:name=>"鳥取県"},{:name=>"島根県"},{:name=>"岡山県"},{:name=>"広島県"},{:name=>"山口県"}])
-
-sikoku.children.create([{:mame=>"徳島県"},{:mame=>"佐賀県"},{:mame=>"長崎県"},{:mame=>"熊本県"},{:mame=>"大分県"},{:mame=>"宮崎県"},{:mame=>"鹿児島県"},{:mame=>"沖縄県"}])
 
 
 
