@@ -1,3 +1,182 @@
 // Place all the styles related to the plan controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+//いいね機能
+.iine {
+  text-align:center;
+}
+
+//コメント機能
+#comment_box.comment_box {
+  text-align: center;
+}
+.sousin {
+  text-align: center;
+}
+.comment{
+  text-align: center;
+}
+ 
+
+
+//スケジュール
+.border-line {
+  font-size: 16px;
+    background-color: #ffffff;
+    /* color: #f40e0dad; */
+    margin: 0 auto;
+    /* margin-bottom: 20px; */
+    padding: 0.6em 0.6rem 0.6rem 0.6em;
+    /* padding-left: 10px; */
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 640px;
+    font-size: x-large;
+    border-bottom: 1px solid #f40e0dad;
+     text-align: center; 
+
+}
+.box {
+  background-color: #ffffff;
+    overflow: hidden;
+    max-width: 640px;
+    margin: 0 auto;
+    
+}
+.box .summary {
+  max-width: 640px;
+  margin: 0 auto;
+}
+.one-day {
+  background-color: #fc948957;
+    border-radius: 10px;
+    padding: 0.6em 0.6em 0.6em 0.6em;
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-bottom: 10px;
+}
+
+.scard {
+    left: 10px;
+    padding: 0.6em 0.6em 0.6em 1.2em;
+    margin-left: 20px;
+    margin-right: 27px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    background: #b7b7b733;
+}
+.scard-line {
+      margin-left: -6.2px;
+}
+.col-1 {
+  flex: 0 0 8.333333%;
+    max-width: 8.333333%;
+}
+h5 {
+  margin-right: 15px;
+}
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.scard-line {
+border-right: 3px solid #dee2e6!important;
+    border-right-width: 3px !important;
+    border-right-style: dashed !important;
+    border-right-color: #ff6d6d !important;
+  
+}
+.form.text {
+  textarea {
+  width: 90%;
+  margin-left: 30px;
+  }
+  sousin {
+  margin-left: 30px;
+  }
+}
+.form-summary {
+  adding: 10px 5px 10px 5px;
+    background-color: #ffff;
+   
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+  position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+.card-body {
+  flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+}
+.form-group {
+  margin-bottom: 1rem;
+} 
+.add {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 15px;
+}
+.sinki {
+  text-align: center;
+}
+.btn.btn-sucess {
+  
+}
+.col-xs-6 btn btn-primary {
+   margin-left: 400px;
+}
+//ここまで
+
+//投稿
+//一覧
+.border-linet {
+  font-size: 16px;
+    background-color: #ffffff;
+    /* color: #f40e0dad; */
+    margin: 0 auto;
+    /* margin-bottom: 20px; */
+    padding: 0.6em 0.6rem 0.6rem 0.6em;
+    /* padding-left: 10px; */
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-width: 800px;
+    font-size: x-large;
+    border-bottom: 1px solid #f40e0dad;
+     text-align: center; 
+}
+.boxt {
+  background-color: #ffffff;
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    
+}
+.time and place {
+  width: 400px;
+}
+
+//plan一覧 
+.index {
+  text-align: center;
+ 
+}

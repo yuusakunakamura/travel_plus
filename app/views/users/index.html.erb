@@ -1,4 +1,10 @@
-
+<h1 class="midasi">Userの名前で検索</h1>
+<div class="midasi-2">
+<%= form_with url: search_users_path, method: :get, local: true do |f| %>
+  <%= f.text_field :name %>
+  <%= f.submit :search %>
+<% end %>
+</div>
 <br>
 <h2 id="journey_summaryi" class="border-linet">投稿者一覧</h2>
   <div id="container" class="boxt">
@@ -21,3 +27,4 @@
       </div>
     </div>
   </div>
+　

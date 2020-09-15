@@ -1,17 +1,22 @@
-Rails.application.routes.draw do
-   devise_for :users, controllers: {
-    
-    :sessions => 'users/sessions'
-  }
+# frozen_string_literal: true
 
-  root :to =>'homes#top'
-  resources :users
-  resources :plans do
-  resources :comments, only: [:create,:destroy]
-  resource :likes, only: [:create, :destroy]
-end
+Rails.application.routes.draw do
+  devise_for :users, controllers: {
+
+    :sessions => 'users/sessions',
+    :registrations => 'users/registrations',
+    :passwords => 'users/passwords'
+  }
   
-get 'homes' => 'homes#about'
-put '/users/:id/hide' => 'users#hide', as: 'users_hide'
-get '/search', to: 'search#search'
+  root to: 'homes#top'
+  resources :users do
+    get :search, on: :collection
+  end
+  resources :plans do
+    resources :comments, only: %i[create destroy]
+    resource :likes, only: %i[create destroy]
+    get :search, on: :collection
+  end
+  get 'homes' => 'homes#about'
+  put '/users/:id/hide' => 'users#hide', as: 'users_hide'
 end

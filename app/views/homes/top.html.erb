@@ -12,7 +12,7 @@
 <div class="continer">
   <div class="row">
     <div class="home-content">
-      <h1 class="user-h">投稿者のピックアップ</h1>
+      <h1 class="user-h">users pick up</h1>
         <div class="user-home">
           <% @users.first(3).each do |user| %>
             <% if user.is_withdrawal == false %>
@@ -21,8 +21,8 @@
                 <%= attachment_image_tag user, :image, format: 'jpeg', fallback: "no-image.jpg", size: "200x200" %>
                 <div class="user-home-name"><%= user.name %></div>
                 <div class="user-home-name"><%= link_to  "プロフィール", user_path(user) %></div>
-              
               </div>
+              
             <% end %>
           <% end %>
         </div>

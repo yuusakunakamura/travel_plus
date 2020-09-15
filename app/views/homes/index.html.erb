@@ -3,3 +3,10 @@
 <h2>デプロイ成功</h2>
 <h1>zzzzzzzzzz</h1>
 qqqqqqq
+
+<%= form_with(model: @plan, local: true) do |form| %>
+              <%= form.radio_button :pattern, :word %>
+              <%= form.label :pattern, "国内", {value: :word, style: "display: inline-block;"} %>
+              <%= form.radio_button :pattern, :oversea %>
+              <%= form.label :pattern, "国外", {value: :oversea, style: "display: inline-block;"} %>
+              <% end %>

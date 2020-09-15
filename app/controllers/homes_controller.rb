@@ -1,13 +1,11 @@
+# frozen_string_literal: true
+
 class HomesController < ApplicationController
+  def index; end
 
-  def index
+  def top
+    @users = User.all
   end
-def top
-	@users = User.all
 
-	
-end
-
-def about
-end
+  def about; end
 end

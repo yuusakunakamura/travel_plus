@@ -1,12 +1,14 @@
-# config valid for current version and patch releases of Capistrano
-lock "~> 3.14.1"
+# frozen_string_literal: true
 
-set :application, "travel_plus" # my_app_name → アプリケーション名
-set :repo_url, "git@github.com:yuusakunakamura/travel_plus.git"
-set :deploy_to, "/home/ec2-user/travel_plus"
+# config valid for current version and patch releases of Capistrano
+lock '~> 3.14.1'
+
+set :application, 'travel_plus' # my_app_name → アプリケーション名
+set :repo_url, 'git@github.com:yuusakunakamura/travel_plus.git'
+set :deploy_to, '/home/ec2-user/travel_plus'
 set :rbenv_ruby, '2.5.7'
-set :linked_files, %w{config/master.key .env}
-append :linked_dirs, "log", "public/system", "tmp"
+set :linked_files, %w[config/master.key .env]
+append :linked_dirs, 'log', 'public/system', 'tmp'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

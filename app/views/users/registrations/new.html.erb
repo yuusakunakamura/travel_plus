@@ -1,7 +1,7 @@
 <br>
 <h2 class="signup">新規登録</h2>
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  <%= render "users/shared/error_messages", resource: resource %>
 
 <div class="field">
     <%= f.label :表示される名前を記入して下さい %><br />

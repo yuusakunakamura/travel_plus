@@ -1,21 +1,21 @@
+# frozen_string_literal: true
+
 class CommentsController < ApplicationController
-	 def create
-    plan = Plan.find(params[:plan_id])
-    comment = current_user.comments.new(comment_params)
-    comment.plan_id = plan.id
-     comment.save
-      redirect_to plan_path(plan)
+  def create
+    @plan = Plan.find(params[:plan_id])
+    @comment = @plan.comments.build(comment_params)
+    @comment.user_id = current_user.id
+    render :index if @comment.save
   end
+
   def destroy
-    Comment.find_by(id: params[:id], plan_id: params[:plan_id]).destroy
-     redirect_to plans_path(@plan)
-    
-    end  
-  
+    @comment = Comment.find(params[:id])
+    render :index if @comment.destroy
+  end
+
   private
+
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :plan_id, :user_id)
   end
 end
-
-  
