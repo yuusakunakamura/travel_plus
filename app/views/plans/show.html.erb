@@ -4,22 +4,11 @@
       <%= link_to  "編集ページ", edit_plan_path(@plan), class: "home glyphicon glyphicon-home" %>
     </h2>
   <% end %>
-  <h2 id="journey_summary_sa" class="border-line">作成PLAN</h2>
+  <h2 id="journey_summary_sa" class="border-line"><%= @plan.title %></h2>
   <div id="containerr" class="box">
     <div id="joruney_summary_box">
       <div class="simmary">
         <div id="summary_word" style="padding-left: 10px; padding-top: 20px;font-size: 16px;font-weight:bold;">
-         <string>旅行先</string></br>
-         <% if Plan.words[@plan.word].to_i > 0 %>
-          <%= @plan.word %>
-         <% end %>
-         <% if Plan.overseas[@plan.oversea].to_i > 0 %>
-          <%= @plan.oversea %>
-        <% end %>
-        </div>
-        <div id="summary_title" style="padding-left: 10px; padding-top: 20px;font-size: 16px;font-weight:bold;">
-           <string>プランタイトル</string></br>
-          <%= @plan.title %>
         </div>
         <br>
         <string>プランメモ</string></br>
@@ -57,10 +46,10 @@
           </div>
           <div class="col scard">
             <i class="far fa-clock"></i>
+            <%= plan.time.strftime('%H:%M') %>
             <div class="row">
               <div class="col-xs-12">
                 <div class="time and place">
-                  <%= plan.time.strftime('%H:%M') %>
                   <i class="fas fa-map-marker-alt"></i>
                   <%= plan.place_name %>
                   <div class="memo">
@@ -99,6 +88,7 @@
     <div id="comment_box" class="comment_box">
        <!-- 投稿されたコメント一覧をブログの詳細ページに表示するためのrender -->
       <%= render partial: 'comments/index', locals: { comments: @comments } %>
+      <div class="page"><%= paginate @comments %></div>
     </div>  
     <% if user_signed_in? %>
       <!-- コメント入力欄をブログの詳細ページに表示するためのrender -->

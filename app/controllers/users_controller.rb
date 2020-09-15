@@ -45,7 +45,7 @@ class UsersController < ApplicationController
     if params[:name].present?
       @users = User.where('name LIKE ?', "%#{params[:name]}%").page(params[:page]).per(2)
     else
-      @users = User.all..page(params[:page]).per(2)
+      @users = User.all.page(params[:page]).per(2)
     end
   end
 

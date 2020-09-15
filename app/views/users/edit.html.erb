@@ -6,8 +6,8 @@
     <div class="field"><%= f.attachment_field :image %></div>
     <div class="field"><%= f.submit "登録内容を保存する" %></div>
   <% end %>
-  <div class="field"><%= link_to "パスワード変更", edit_user_registration_path %></div>
+  <div class="field"><%= link_to "パスワード変更", edit_user_registration_path,class: "btn btn-outline-danger",:style=>"width:200px"%></div>
   <% if user_signed_in? && @user == current_user %>
-    <div class="field"><%= link_to "退会", users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger" %></div>
+    <div class="field"><%= link_to "退会", users_hide_path(current_user), method: :put, "data-confirm" => "本当に退会しますか？", class: "btn btn-outline-danger",:style=>"width:200px" %></div>
   <% end %>
-</div>
+</div> 

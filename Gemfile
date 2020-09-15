@@ -45,6 +45,8 @@ group :development, :test do
   gem 'capistrano3-puma'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
+  gem 'rspec-rails'
+  gem "factory_bot_rails"
 end
 
 group :development do
@@ -65,9 +67,6 @@ group :test do
   gem 'chromedriver-helper'
 end
 
-group :development, :test do
-   gem 'rspec-rails'
-end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]

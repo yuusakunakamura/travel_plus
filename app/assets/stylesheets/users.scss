@@ -1,3 +1,117 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+//新規登録 ログイン画面
+.signup { 
+  text-align: center;
+}
+.actions {
+ text-align: center;
+}
+.field {
+ text-align: center;
+
+}
+
+body {
+width: 100%;
+background-color: #fc948957;
+margin: 0;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+}
+.sakusei {
+ 
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+.henkou {
+ 
+  margin-top: 20px;
+}
+.myplan {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #f40e0dad;
+  height: 40px;
+  text-align: center;
+
+}
+//マイページ
+.room {
+  text-align: center;
+}
+.room {
+  align: center;
+  width: 300px;
+  position: relative;
+  padding: 8px 15px;
+   margin-left: auto;
+    margin-right: auto;
+  background: #def3ff;
+  border-radius: 20px;
+}
+
+.room:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f111";
+  font-weight: 900;
+  position: absolute;
+  font-size: 15px;
+  left: -40px;
+  bottom: 0;
+  color: #def3ff;
+}
+
+.room:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f111";
+  font-weight: 900;
+  position: absolute;
+  font-size: 23px;
+  left: -23px;
+  bottom: 0;
+  color: #def3ff;
+}
+.col-xs-4{
+ text-align: center;
+}
+
+.itirann {
+   margin-left: 100px;
+}
+
+.table thead th {
+  text-align: center;
+}
+.table td {
+  text-align: center;
+}
+//マイページここまで
+.user-h {
+  background: #dfefff;
+  box-shadow: 0px 0px 0px 5px #dfefff;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+}
+.midasi {
+  position: relative;/*相対位置*/
+  padding-left: 1.2em;/*アイコン分のスペース*/
+  line-height: 1.4;/*行高*/
+  font-family: 'M PLUS Rounded 1c', sans-serif; 
+}
+
+.midasi:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f1b0";/*アイコンのユニコード*/
+  font-weight: 900;
+  position: absolute;/*絶対位置*/
+  font-size: 1em;/*サイズ*/
+  left: 0;/*アイコンの位置*/
+  top: 0;/*アイコンの位置*/
+  color: #ff938b; /*アイコン色*/
+}
+.midasi-2 {
+  margin-left: 5px;
+}

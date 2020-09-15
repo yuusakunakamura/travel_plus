@@ -4,7 +4,7 @@ class PlansController < ApplicationController
   before_action :baria_user, only: %i[edit update destroy]
   def new
     @plan = Plan.new
-    @plan.plan_dates.build
+    @plan.plan_dates.build 
   end
 
   def create
@@ -32,7 +32,7 @@ class PlansController < ApplicationController
     @user = @plan.user
     @like = Like.new
     @comment = Comment.new
-    @comments = @plan.comments
+    @comments = @plan.comments.page(params[:page]).per(2)
   end
 
   def index
@@ -77,7 +77,7 @@ class PlansController < ApplicationController
   private
 
   def plan_params
-    params.require(:plan).permit(:oversea,:word, :title, :user_id, :picture, :introduction, :date, plan_dates_attributes: %i[_destroy id image price place_name place_introduction time])
+    params.require(:plan).permit(:image,:oversea,:word, :title, :user_id, :picture, :introduction, :date, plan_dates_attributes: %i[_destroy id image price place_name place_introduction time])
   end
   def baria_user
     redirect_to plans_path(@plan) unless Plan.find(params[:id]).user.id.to_i == current_user.id

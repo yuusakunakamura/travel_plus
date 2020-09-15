@@ -12,8 +12,8 @@ class User < ApplicationRecord
   attachment :image
   has_many :comments # コメント機能
 
-  validates :name, presence: true
-  validates :name, length: { maximum: 20 }
+  validates :name, presence: true, length: { maximum: 10 }, uniqueness: true
+  validates :email, presence: true, uniqueness: true
   def already_liked?(plan)
     likes.exists?(plan_id: plan.id)
   end
