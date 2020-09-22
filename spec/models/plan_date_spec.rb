@@ -22,5 +22,12 @@ describe PlanDate do
       plan_date.valid?
       expect(plan_date.errors[:place_introduction]).to include("を入力してください")
     end
+     it 'place_introductionがなくて投稿できない' do
+      user = FactoryBot.create(:user)
+      plan = FactoryBot.create(:plan,user_id: user.id)
+      plan_date = build(:plan_date, plan_id: plan.id,place_introduction: "")
+      plan_date.valid?
+      expect(plan_date.errors[:place_introduction]).to include("を入力してください")
+    end
    end
 end 
