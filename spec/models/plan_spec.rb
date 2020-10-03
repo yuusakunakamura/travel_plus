@@ -13,7 +13,7 @@ describe Plan do
       plan.valid?
       expect(plan.errors[:title]).to include("を入力してください")
     end
-     it 'title10文字以上で投稿できない' do
+     it 'titleが10文字以上で投稿できない' do
       user = FactoryBot.create(:user)
       plan = build(:plan, user_id: user.id, title: "1234567891011")
       plan.valid?
