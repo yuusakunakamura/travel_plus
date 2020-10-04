@@ -8,7 +8,7 @@ describe PlanDate do
       plan_date.valid?
       expect(plan_date).to be_valid
     end
-     it 'place_nameがなくて投稿できない' do
+     it 'place_nameがなくて投稿ができない' do
       user = FactoryBot.create(:user)
       plan = FactoryBot.create(:plan,user_id: user.id)
       plan_date = build(:plan_date, plan_id: plan.id,place_name: "")
