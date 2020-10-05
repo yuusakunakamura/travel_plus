@@ -1,7 +1,7 @@
 require 'rails_helper'
 describe Plan do
    describe '#create' do
-     it '投稿できる' do
+     it '投稿ができる' do
       user = FactoryBot.create(:user)
       plan = build(:plan, user_id: user.id)
       plan.valid?
