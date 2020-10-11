@@ -7,7 +7,7 @@ describe Plan do
       plan.valid?
       expect(plan).to be_valid
     end
-    it 'titleがないと投稿できない' do
+    it 'titleがないから投稿できない' do
       user = FactoryBot.create(:user)
       plan = build(:plan, user_id: user.id, title: "")
       plan.valid?
