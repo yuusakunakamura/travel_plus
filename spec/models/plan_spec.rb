@@ -1,19 +1,19 @@
 require 'rails_helper'
 describe Plan do
    describe '#create' do
-     it '投稿できる' do
+     it '投稿ができる' do
       user = FactoryBot.create(:user)
       plan = build(:plan, user_id: user.id)
       plan.valid?
       expect(plan).to be_valid
     end
-    it 'titleがないと投稿できない' do
+    it 'titleがないので投稿できない' do
       user = FactoryBot.create(:user)
       plan = build(:plan, user_id: user.id, title: "")
       plan.valid?
       expect(plan.errors[:title]).to include("を入力してください")
     end
-     it 'title10文字以上で投稿できない' do
+     it 'titleが10文字以上で投稿できない' do
       user = FactoryBot.create(:user)
       plan = build(:plan, user_id: user.id, title: "1234567891011")
       plan.valid?
