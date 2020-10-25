@@ -1,7 +1,7 @@
 require 'rails_helper'
 describe PlanDate do
    describe '#create' do
-     it '投稿ができる' do
+     it '投稿できる' do
       user = FactoryBot.create(:user)
       plan = FactoryBot.create(:plan,user_id: user.id)
       plan_date = build(:plan_date, plan_id: plan.id)
